@@ -1,0 +1,31 @@
+[[language]]
+name = "json"
+formatter = { command = "prettier", args = ["--parser", "json"] }
+
+[[language]]
+name = "yaml"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "yaml"] }
+
+[[language]]
+name = "fish"
+formatter = { command = "fish_indent" }
+auto-format = true
+
+[[language]]
+name = "python"
+formatter = { command = "black", args = ["--quiet", "-"] }
+auto-format = true
+
+[language.config.pylsp.plugins]
+ruff = { enabled = true, ignore = ["F401"], lineLength = 120 }
+
+[[language]]
+name = "hcl"
+formatter = { command = 'terraform', args = ["fmt", "-"] }
+auto-format = true
+
+[[language]]
+name = "tfvars"
+formatter = { command = 'terraform', args = ["fmt", "-"] }
+auto-format = true
