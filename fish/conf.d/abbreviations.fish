@@ -1,6 +1,6 @@
 # kubernetes
 abbr --add k kubectl
-abbr --add kx kubectx
+abbr --add kc kubectx
 abbr --add kn kubens
 
 # aws sso
