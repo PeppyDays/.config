@@ -1,5 +1,26 @@
 gui:
   sidePanelWidth: 0.2
+  # catppuccin frappe theme
+  # https://github.com/catppuccin/lazygit
+  theme:
+    lightTheme: false
+    activeBorderColor:
+      - "#a6d189"
+      - bold
+    inactiveBorderColor:
+      - "#c6d0f5"
+    optionsTextColor:
+      - "#8caaee"
+    selectedLineBgColor:
+      - "#414559"
+    selectedRangeBgColor:
+      - "#414559"
+    cherryPickedCommitBgColor:
+      - "#81c8be"
+    cherryPickedCommitFgColor:
+      - "#8caaee"
+    unstagedChangesColor:
+      - red
 git:
   paging:
     colorArg: never
