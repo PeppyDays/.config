@@ -21,6 +21,7 @@ hidden = false
 
 [editor.lsp]
 display-messages = true
+display-inlay-hints = true
 
 [editor.statusline]
 left = ["mode", "spinner", "version-control"]
@@ -35,18 +36,13 @@ F4 = ":set whitespace.render all"
 F5 = ":set whitespace.render none"
 C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+"C-;" = ["insert_at_line_end", ":insert-output echo ';'", "normal_mode", "move_visual_line_down"]
 
 [keys.normal."+"]
 b = ":run-shell-command cargo build"
 c = ":run-shell-command cargo check"
 t = ":run-shell-command cargo test"
+r = ":run-shell-command cargo run"
 
 [keys.insert]
-up = "no_op"
-down = "no_op"
-left = "no_op"
-right = "no_op"
-pageup = "no_op"
-pagedown = "no_op"
-home = "no_op"
-end = "no_op"
+"C-;" = ["normal_mode", "insert_at_line_end", ":insert-output echo ';'", "normal_mode", "move_visual_line_down", "insert_mode"]

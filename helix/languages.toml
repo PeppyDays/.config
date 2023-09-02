@@ -17,6 +17,10 @@ name = "python"
 formatter = { command = "black", args = ["--quiet", "-"] }
 auto-format = true
 
+[[language]]
+name = "rust"
+formatter = { command = "rustfmt" }
+
 [language.config.pylsp.plugins]
 ruff = { enabled = true, ignore = ["F401"], lineLength = 120 }
 

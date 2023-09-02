@@ -8,6 +8,9 @@ set -gx EDITOR ewrap
 # starship prompt configuration
 starship init fish | source
 
+# rust
+set -gx fish_user_paths $HOME/.cargo/bin $PATH
+
 # pfetch configuration
 set -gx PF_INFO ascii title os shell editor memory uptime
 set -gx PF_ASCII Catppuccin
