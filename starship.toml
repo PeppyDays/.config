@@ -19,7 +19,7 @@ deleted = "x"
 disabled = true
 
 [aws]
-format = '[$symbol($profile )(\[$duration\] )]($style)'
+format = '/ [$symbol($profile )(\[$duration\] )]($style)'
 symbol = ""
 style = "bold #FAF3F0"
 
@@ -79,7 +79,7 @@ symbol = "fossil "
 symbol = "gcp "
 
 [git_branch]
-symbol = "git "
+symbol = ""
 style = "bold #FFEECC"
 
 [golang]
@@ -179,6 +179,7 @@ Windows = "win "
 [package]
 symbol = "pkg "
 style = "bold #A7727D"
+disabled = true
 
 [perl]
 symbol = "pl "
@@ -196,7 +197,7 @@ symbol = "pulumi "
 symbol = "purs "
 
 [python]
-symbol = "py "
+# symbol = "py "
 style = "bold #FEBBCC"
 
 [raku]
@@ -205,8 +206,8 @@ symbol = "raku "
 [ruby]
 symbol = "rb "
 
-[rust]
-symbol = "rs "
+# [rust]
+# symbol = "rs "
 
 [scala]
 symbol = "scala "
