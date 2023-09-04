@@ -1,3 +1,15 @@
+# reload config
+cmd edit-config ${{
+    lf -remote "send $id source ~/.config/lf/lfrc"
+}}
+
+map C edit-config
+
+# testing ..
+set nopreview
+set ratios 2
+set info size:time
+
 # interpreter for shell commands
 set shell sh
 
@@ -20,8 +32,14 @@ set ifs "\n"
 # leave some space at the top and the bottom of the screen
 set scrolloff 10
 
-# Use the `dim` attribute instead of underline for the cursor in the preview pane
+# use the `dim` attribute instead of underline for the cursor in the preview pane
 set cursorpreviewfmt "\033[7;2m"
+
+# set ignore cases
+set ignorecase true
+
+# set icons
+set icons true
 
 # use enter for shell commands
 map <enter> shell
@@ -34,22 +52,22 @@ map x $$f
 map X !$f
 
 # dedicated keys for file opener actions
-map o &mimeopen $f
-map O $mimeopen --ask $f
+# map o &mimeopen $f
+# map O $mimeopen --ask $f
 
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
 # use either file extensions and/or mime types here. Below uses an editor for
 # text files and a file opener for the rest.
-cmd open &{{
-    case $(file --mime-type -Lb $f) in
-        text/*) lf -remote "send $id \$$EDITOR \$fx";;
-        *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
-    esac
-}}
+# cmd open &{{
+#     case $(file --mime-type -Lb $f) in
+#         text/*) lf -remote "send $id \$$EDITOR \$fx";;
+#         *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
+#     esac
+# }}
 
 # mkdir command. See wiki if you want it to select created dir
-map a :push %mkdir<space>
+# map a :push %mkdir<space>
 
 # define a custom 'rename' command without prompt for overwrite
 # cmd rename %[ -e $1 ] && printf "file exists" || mv $f $1
@@ -63,17 +81,7 @@ map a :push %mkdir<space>
 cmd trash %set -f; mv $fx ~/.trash
 
 # define a custom 'delete' command
-# cmd delete ${{
-#     set -f
-#     printf "$fx\n"
-#     printf "delete?[y/n]"
-#     read ans
-#     [ "$ans" = "y" ] && rm -rf $fx
-# }}
-
-# use '<delete>' key for either 'trash' or 'delete' command
-# map <delete> trash
-# map <delete> delete
+cmd delete %set -f; rm -rf $fx
 
 # extract the current file with the right command
 # (xkcd link: https://xkcd.com/1168/)
@@ -106,3 +114,34 @@ cmd zip ${{
     zip -r $1.zip $1
     rm -rf $1
 }}
+
+# create directory
+cmd make-dir ${{
+    set -f
+    mkdir -p $@
+}}
+
+# create file
+cmd make-file ${{
+    set -f
+    touch $@
+}}
+
+# remove bindings
+map m
+map o
+map n
+map '"'
+
+# add bindings
+map . set hidden!
+
+map <delete> trash
+
+map gd cd ~/Downloads
+map gp cd ~/Documents/Code/Project
+map gl cd ~/Documents/Code/Learning
+map gt cd ~/.trash
+
+map md push :make-dir<space>
+map mf push :make-file<space>
