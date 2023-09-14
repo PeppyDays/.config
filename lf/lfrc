@@ -5,11 +5,6 @@ cmd edit-config ${{
 
 map C edit-config
 
-# testing ..
-set nopreview
-set ratios 2
-set info size:time
-
 # interpreter for shell commands
 set shell sh
 
@@ -137,6 +132,8 @@ map '"'
 map . set hidden!
 
 map <delete> trash
+
+map R reload
 
 map gd cd ~/Downloads
 map gp cd ~/Documents/Code/Project
