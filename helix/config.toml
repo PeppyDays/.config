@@ -34,15 +34,10 @@ mode.select = "SELECT"
 [keys.normal]
 F4 = ":set whitespace.render all"
 F5 = ":set whitespace.render none"
-C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
-C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
-"C-;" = ["insert_at_line_end", ":insert-output echo ';'", "normal_mode", "move_visual_line_down"]
-
-[keys.normal."+"]
-b = ":run-shell-command cargo build"
-c = ":run-shell-command cargo check"
-t = ":run-shell-command cargo test"
-r = ":run-shell-command cargo run"
+A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 
 [keys.insert]
-"C-;" = ["normal_mode", "insert_at_line_end", ":insert-output echo ';'", "normal_mode", "move_visual_line_down", "insert_mode"]
+C-h = "move_char_left"
+C-l = "move_char_right"
+j = { k = "normal_mode" }
