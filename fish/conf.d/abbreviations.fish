@@ -5,8 +5,8 @@ abbr --add kn kubens
 
 # aws sso
 abbr --add asl aws sso login --profile
-abbr --add aslh export AWS_PROFILE=hp-dev-prod-admin & aws sso login --profile hp-dev-prod-admin
-abbr --add asls export AWS_PROFILE=hp-shared-admin & aws sso login --profile hp-shared-admin
+abbr --add aslh aws sso login --profile hp-dev-prod-admin
+abbr --add asls aws sso login --profile hp-shared-admin
 
 # terraform
 abbr --add tf terraform
