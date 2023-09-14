@@ -1,6 +1,6 @@
 format = "[#](bold #AAC4FF) $all"
 right_format = "$kubernetes $aws"
-# command_timeout = 1000
+command_timeout = 2000
 
 [character]
 success_symbol = "[>](bold green)"
@@ -11,12 +11,14 @@ vimcmd_symbol = "[<](bold green)"
 tag_symbol = " tag "
 
 [git_status]
-ahead = ">"
-behind = "<"
-diverged = "<>"
-renamed = "r"
-deleted = "x"
-disabled = true
+ahead = "⇡$count"
+behind = "⇣$count"
+diverged = "<>$count"
+modified = "!$count"
+renamed = "r$count"
+deleted = "x$count"
+staged = "+$count"
+disabled = false
 
 [aws]
 format = '/ [$symbol($profile )(\[$duration\] )]($style)'
