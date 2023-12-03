@@ -25,6 +25,7 @@ abbr --add lg lazygit
 # exa, replace of ls
 abbr --add ls exa
 abbr --add ll exa -alh
+abbr --add lt exa -alh --tree
 
 # zellij, terminal multiplexer
 abbr --add zj zellij
