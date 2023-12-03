@@ -10,7 +10,7 @@ formatter = { command = "prettier", args = ["--parser", "yaml", "--tab-width", "
 [[language]]
 name = "toml"
 auto-format = true
-formatter = { command = "prettier", args = ["--parser", "toml", "--tab-width", "2"] }
+formatter = { command = "prettier", args = ["--parser", "toml"] }
 
 [[language]]
 name = "fish"
@@ -24,13 +24,18 @@ auto-format = true
 
 [[language]]
 name = "rust"
-formatter = { command = "rustfmt" }
+auto-format = true
 
-[language.config.check]
+[language-server.rust-analyzer.config.check]
 command = "clippy"
 
-[language.config.pylsp.plugins]
-ruff = { enabled = true, ignore = ["F401"], lineLength = 120 }
+[[language]]
+name = "java"
+scope = "source.java"
+injection-regex = "java"
+file-types = ["java"]
+roots = ["build.gradle", "build.gradle.kts", "settings.gradle", "settings.gradle.kts"]
+indent = { tab-width = 4, unit = "    " }
 
 [[language]]
 name = "hcl"
