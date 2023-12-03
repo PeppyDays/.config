@@ -7,13 +7,13 @@ cmd + shift - h : yabai -m window --focus west
 cmd + shift - l : yabai -m window --focus east
 
 # change focus between external displays (left and right)
-cmd + shift - left : yabai -m display --focus west
-cmd + shift - right : yabai -m display --focus east
+cmd + shift + ctrl - h: yabai -m display --focus west
+cmd + shift + ctrl - l: yabai -m display --focus east
 
 # -- Modifying the Layout --
 
 # rotate layout clockwise
-# cmd + shift - r : yabai -m space --rotate 270
+cmd + shift - r : yabai -m space --rotate 270
 
 # flip along y-axis
 # cmd + shift - y : yabai -m space --mirror y-axis
