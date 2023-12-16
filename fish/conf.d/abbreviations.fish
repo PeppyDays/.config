@@ -23,9 +23,9 @@ abbr --add go git-open
 abbr --add lg lazygit
 
 # exa, replace of ls
-abbr --add ls exa
-abbr --add ll exa -alh
-abbr --add lt exa -alh --tree
+abbr --add ls eza
+abbr --add ll eza -alh
+abbr --add lt eza -alh --tree
 
 # zellij, terminal multiplexer
 abbr --add zj zellij
@@ -46,3 +46,4 @@ abbr --add ystart "yabai --start-service; skhd --start-service;"
 # favorite directories
 abbr --add cdp cd /Users/arine/Documents/Code/Project
 abbr --add cdl cd /Users/arine/Documents/Code/Learning
+abbr --add cdh cd /Users/arine/Documents/Code/healingpaper
