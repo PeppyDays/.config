@@ -3,8 +3,15 @@ simplified_ui true
 copy_on_select true
 
 keybinds {
+	// change session mode keybinding
 	unbind "Ctrl o"
 	normal {
 		bind "Ctrl e" { SwitchToMode "session"; }
+	}
+
+	// change move mode keybinding
+	unbind "Ctrl h"
+	normal {
+		bind "Ctrl m" { SwitchToMode "move"; }
 	}
 }
