@@ -14,6 +14,9 @@ abbr --add tf terraform
 # helix
 abbr --add vi hx
 
+# nvim
+abbr --add nv nvim
+
 # python
 abbr --add ae source .venv/bin/activate.fish
 abbr --add de deactivate
