@@ -97,7 +97,6 @@ return {
       docker_compose_language_service = {},
       grammarly = {},
       helm_ls = {},
-      lua_ls = {},
       marksman = {},
       pylsp = {},
       rust_analyzer = {},
