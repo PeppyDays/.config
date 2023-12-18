@@ -15,6 +15,11 @@ return {
     -- Adds file name completion from path
     "hrsh7th/cmp-path",
 
+    -- Adds copilot suggestion
+    "zbirenbaum/copilot-cmp",
+    -- event = { "InsertEnter", "LspAttach" },
+    -- fix_pairs = true,
+
     -- Adds a number of user-friendly snippets with pictograms
     "rafamadriz/friendly-snippets",
     "onsails/lspkind.nvim",
@@ -27,6 +32,12 @@ return {
     require("luasnip.loaders.from_vscode").lazy_load()
 
     luasnip.config.setup {}
+
+    local has_words_before = function()
+      if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then return false end
+      local line, col = table.unpack(vim.api.nvim_win_get_cursor(0))
+      return col ~= 0 and vim.api.nvim_buf_get_text(0, line-1, 0, line-1, col, {})[1]:match("^%s*$") == nil
+    end
 
     cmp.setup {
       snippet = {
@@ -48,7 +59,9 @@ return {
           select = true,
         },
         ["<Tab>"] = cmp.mapping(function(fallback)
-          if cmp.visible() then
+          if cmp.visible() and has_words_before() then
+            cmp.select_next_item({ behavior = cmp.SelectBehaviour.Select })
+          elseif cmp.visible() then
             cmp.select_next_item()
           elseif luasnip.expand_or_locally_jumpable() then
             luasnip.expand_or_jump()
@@ -67,17 +80,34 @@ return {
         end, { "i", "s" }),
       },
       sources = {
+        { name = "copilot" },
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
       },
-        formatting = {
-          format = lspkind.cmp_format({
-            maxwidth = 50,
-            ellipsis_char = "..",
-          }),
+      formatting = {
+        format = lspkind.cmp_format({
+          maxwidth = 50,
+          symbol_map = { Copilot = "" },
+          ellipsis_char = "..",
+         }),
+      },
+      sorting = {
+        priority_weight = 2,
+        comparators = {
+          require("copilot_cmp.comparators").prioritize,
+          cmp.config.compare.offset,
+          cmp.config.compare.exact,
+          cmp.config.compare.score,
+          cmp.config.compare.recently_used,
+          cmp.config.compare.locality,
+          cmp.config.compare.kind,
+          cmp.config.compare.sort_text,
+          cmp.config.compare.length,
+          cmp.config.compare.order,
         },
+      },
     }
   end,
 }
