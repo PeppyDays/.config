@@ -3,12 +3,11 @@ gui:
   # catppuccin frappe theme
   # https://github.com/catppuccin/lazygit
   theme:
-    lightTheme: false
     activeBorderColor:
       - "#a6d189"
       - bold
     inactiveBorderColor:
-      - "#c6d0f5"
+      - "#a5adce"
     optionsTextColor:
       - "#8caaee"
     selectedLineBgColor:
@@ -16,11 +15,16 @@ gui:
     selectedRangeBgColor:
       - "#414559"
     cherryPickedCommitBgColor:
-      - "#81c8be"
+      - "#51576d"
     cherryPickedCommitFgColor:
-      - "#8caaee"
+      - "#a6d189"
     unstagedChangesColor:
-      - red
+      - "#e78284"
+    defaultFgColor:
+      - "#c6d0f5"
+    searchingActiveBorderColor:
+      - "#e5c890"
+
 git:
   paging:
     colorArg: never
