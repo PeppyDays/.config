@@ -3,7 +3,7 @@ fish_add_path /opt/homebrew/bin
 
 # default editor to wrapper of helix
 # refer to /usr/local/bin/ewrap
-set -gx EDITOR nvim
+set -gx EDITOR hx
 
 # starship prompt configuration
 starship init fish | source
