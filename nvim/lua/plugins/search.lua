@@ -19,51 +19,54 @@ return {
         end,
         desc = "Find Plugin File",
       },
+      -- <leader>fF
+      -- {
+      --   ";f",
+      --   function()
+      --     require("telescope.builtin").find_files({
+      --       no_ignore = false,
+      --       hidden = true,
+      --     })
+      --   end,
+      --   desc = "Lists files in cwd, respects .gitignore",
+      -- },
+      -- <leader>fb
+      --{
+      --  "\\\\",
+      --  function()
+      --    require("telescope.builtin").buffers()
+      --  end,
+      --  desc = "Lists open buffers",
+      --},
+      -- {
+      --   ";t",
+      --   function()
+      --     require("telescope.builtin").help_tags()
+      --   end,
+      --   desc = "Lists available help tags and opens a new window with the relevant help info on <cr>",
+      -- },
       {
-        ";f",
-        function()
-          require("telescope.builtin").find_files({
-            no_ignore = false,
-            hidden = true,
-          })
-        end,
-        desc = "Lists files in cwd, respects .gitignore",
-      },
-      {
-        "\\\\",
-        function()
-          require("telescope.builtin").buffers()
-        end,
-        desc = "Lists open buffers",
-      },
-      {
-        ";t",
-        function()
-          require("telescope.builtin").help_tags()
-        end,
-        desc = "Lists available help tags and opens a new window with the relevant help info on <cr>",
-      },
-      {
-        ";;",
+        "<leader>\\",
         function()
           require("telescope.builtin").resume()
         end,
-        desc = "Resume the previous telescope picker",
+        desc = "Resume the Last Picker",
       },
-      {
-        ";e",
-        function()
-          require("telescope.builtin").diagnostics()
-        end,
-        desc = "Lists Diagnostics for all open buffers or a specific buffer",
-      },
-      {
-        ";s",
-        function()
-          require("telescope.builtin").treesitter()
-        end,
-        desc = "Lists Function names, variables, from Treesitter",
-      },
+      -- <leader>sd, <leader>sD
+      -- {
+      --   ";e",
+      --   function()
+      --     require("telescope.builtin").diagnostics()
+      --   end,
+      --   desc = "Lists Diagnostics for all open buffers or a specific buffer",
+      -- },
+      -- {
+      --   ";s",
+      --   function()
+      --     require("telescope.builtin").treesitter()
+      --   end,
+      --   desc = "Lists Function names, variables, from Treesitter",
+      -- },
       {
         "<leader>e",
         function()
