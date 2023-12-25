@@ -5,8 +5,10 @@ line-number = "relative"
 scroll-lines = 1
 cursorline = true
 true-color = true
-bufferline = "multiple"
+undercurl = true
+# bufferline = "multiple"
 auto-save = true
+mouse = false
 
 [editor.cursor-shape]
 insert = "bar"
@@ -25,20 +27,19 @@ display-inlay-hints = true
 
 [editor.statusline]
 left = ["mode", "spinner", "version-control"]
-center = ["file-name"]
-right = ["diagnostics", "file-encoding", "file-type"]
+center = ["file-modification-indicator", "file-name"]
+right = ["position", "register", "separator", "diagnostics", "file-encoding", "file-type"]
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
 
 [keys.normal]
-F4 = ":set whitespace.render all"
-F5 = ":set whitespace.render none"
-C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
-C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+# F4 = ":set whitespace.render all"
+# F5 = ":set whitespace.render none"
+A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 
-[keys.insert]
-C-h = "move_char_left"
-C-l = "move_char_right"
-j = { k = "normal_mode" }
-C-o = ["normal_mode", "open_below"]
+# [keys.insert]
+# C-h = "move_char_left"
+# C-l = "move_char_right"
+# C-o = ["normal_mode", "open_below"]

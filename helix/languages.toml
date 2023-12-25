@@ -10,7 +10,7 @@ formatter = { command = "prettier", args = ["--parser", "yaml", "--tab-width", "
 [[language]]
 name = "toml"
 auto-format = true
-formatter = { command = "prettier", args = ["--parser", "toml"] }
+formatter = { command = "prettier", args = ["--parser", "toml", "--tab-width", "2"] }
 
 [[language]]
 name = "fish"
@@ -39,10 +39,10 @@ indent = { tab-width = 4, unit = "    " }
 
 [[language]]
 name = "hcl"
-formatter = { command = 'terraform', args = ["fmt", "-"] }
+formatter = { command = "terraform", args = ["fmt", "-"] }
 auto-format = true
 
 [[language]]
 name = "tfvars"
-formatter = { command = 'terraform', args = ["fmt", "-"] }
+formatter = { command = "terraform", args = ["fmt", "-"] }
 auto-format = true
