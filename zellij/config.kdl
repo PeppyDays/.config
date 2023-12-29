@@ -1,17 +1,40 @@
 theme "catppuccin-frappe"
 simplified_ui true
 copy_on_select true
+default_layout "compact"
 
 keybinds {
 	// change session mode keybinding
-	unbind "Ctrl o"
-	normal {
-		bind "Ctrl e" { SwitchToMode "session"; }
+	session {
+    unbind "Ctrl o"
+		bind "Ctrl x" { SwitchToMode "Normal"; }
 	}
 
 	// change move mode keybinding
-	unbind "Ctrl h"
-	normal {
-		bind "Ctrl m" { SwitchToMode "move"; }
+	move {
+    unbind "Ctrl h"
+		bind "Ctrl e" { SwitchToMode "Normal"; }
 	}
+
+  shared_except "locked" {
+    unbind "Alt h"
+    unbind "Alt l"
+    unbind "Alt j"
+    unbind "Alt k"
+    bind "Alt Left" { MoveFocusOrTab "Left"; }
+    bind "Alt Right" { MoveFocusOrTab "Right"; }
+    bind "Alt Down" { MoveFocus "Down"; }
+    bind "Alt Up" { MoveFocus "Up"; }
+  }
+
+
+  shared_except "session" "locked" {
+    unbind "Ctrl o"
+    bind "Ctrl x" { SwitchToMode "Session"; }
+  }
+
+  shared_except "move" "locked" {
+    unbind "Ctrl h"
+    bind "Ctrl e" { SwitchToMode "Move"; }
+  }
 }
