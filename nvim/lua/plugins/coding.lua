@@ -11,6 +11,7 @@ return {
     opts = function(_, opts)
       vim.list_extend(opts.ensure_installed, {
         "rust-analyzer",
+        "kotlin-language-server",
       })
     end,
   },
@@ -41,6 +42,7 @@ return {
         "gitignore",
         "http",
         "java",
+        "kotlin",
         "rust",
         "sql",
         "python",
