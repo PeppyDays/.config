@@ -102,14 +102,34 @@ return {
         mappings = {
           n = {},
         },
+        borderchars = {
+          "─",
+          "│",
+          "─",
+          "│",
+          "┌",
+          "┐",
+          "┘",
+          "└",
+        },
       })
       opts.pickers = {
         diagnostics = {
-          theme = "ivy",
+          theme = "dropdown",
           initial_mode = "normal",
           layout_config = {
             preview_cutoff = 9999,
           },
+        },
+        borderchars = {
+          "─",
+          "│",
+          "─",
+          "│",
+          "┌",
+          "┐",
+          "┘",
+          "└",
         },
       }
       opts.extensions = {
@@ -117,6 +137,7 @@ return {
           theme = "dropdown",
           -- disables netrw and use telescope-file-browser in its place
           hijack_netrw = true,
+          layout_strategy = "horizontal",
           mappings = {
             -- your custom insert mode mappings
             ["n"] = {
@@ -139,6 +160,16 @@ return {
               ["<PageUp>"] = actions.preview_scrolling_up,
               ["<PageDown>"] = actions.preview_scrolling_down,
             },
+          },
+          borderchars = {
+            "─",
+            "│",
+            "─",
+            "│",
+            "┌",
+            "┐",
+            "┘",
+            "└",
           },
         },
       }
