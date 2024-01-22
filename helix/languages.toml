@@ -22,6 +22,18 @@ name = "python"
 formatter = { command = "black", args = ["--quiet", "-"] }
 auto-format = true
 
+[language.config.pylsp.plugins]
+pyflakes = {enabled = false}
+mccabe = {enabled = false}
+pyls_isort = {enabled = false}
+pycodestyle = {enabled = false, maxLineLength = 88}
+pydocstyle = {enabled = false}
+autopep8 = {enabled = false}
+yapf = {enabled = false}
+flake8 = {enabled = false}
+pylint = {enabled = false}
+ruff = {enabled = true, extendSelect = ["I"]}
+mypy = {enabled = true, live_mode = true, strict = true}
 [[language]]
 name = "rust"
 auto-format = true
