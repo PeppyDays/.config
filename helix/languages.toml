@@ -22,7 +22,7 @@ name = "python"
 formatter = { command = "black", args = ["--quiet", "-"] }
 auto-format = true
 
-[language.config.pylsp.plugins]
+[language-server.pylsp.config.plugins]
 pyflakes = {enabled = false}
 mccabe = {enabled = false}
 pyls_isort = {enabled = false}
@@ -34,8 +34,10 @@ flake8 = {enabled = false}
 pylint = {enabled = false}
 ruff = {enabled = true, extendSelect = ["I"]}
 mypy = {enabled = true, live_mode = true, strict = true}
+
 [[language]]
 name = "rust"
+formatter = { command = "cargo +nightly fmt" }
 auto-format = true
 
 [language-server.rust-analyzer.config.check]
