@@ -8,6 +8,9 @@ set -gx EDITOR hx
 # starship prompt configuration
 starship init fish | source
 
+# zoxide prompt configuration
+zoxide init fish | source
+
 # rust
 set -gx fish_user_paths $HOME/.cargo/bin $PATH
 
