@@ -18,7 +18,7 @@ modified = "!$count"
 renamed = "r$count"
 deleted = "x$count"
 staged = "+$count"
-disabled = true
+disabled = false
 
 [aws]
 format = '/ [$symbol($profile )(\[$duration\] )]($style)'
