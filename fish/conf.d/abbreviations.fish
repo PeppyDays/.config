@@ -22,7 +22,6 @@ abbr --add ae source .venv/bin/activate.fish
 abbr --add de deactivate
 
 # git
-abbr --add go git-open
 abbr --add lg lazygit
 
 # exa, replace of ls
