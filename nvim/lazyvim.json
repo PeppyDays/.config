@@ -1,11 +1,9 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.coding.copilot",
-    "lazyvim.plugins.extras.lang.java",
-    "lazyvim.plugins.extras.test.core"
+
   ],
   "news": {
     "NEWS.md": "2123"
   },
-  "version": 2
+  "version": 3
 }
