@@ -1,6 +1,9 @@
 # homebrew bin directory
 fish_add_path /opt/homebrew/bin
 
+# go bin directory
+fish_add_path ~/go/bin
+
 # default editor to wrapper of helix
 # refer to /usr/local/bin/ewrap
 set -gx EDITOR hx
