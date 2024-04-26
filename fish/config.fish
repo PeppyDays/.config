@@ -4,15 +4,11 @@ fish_add_path /opt/homebrew/bin
 # go bin directory
 fish_add_path ~/go/bin
 
-# default editor to wrapper of helix
-# refer to /usr/local/bin/ewrap
-set -gx EDITOR hx
+# default editor to wrapper of nvim
+set -gx EDITOR nvim
 
 # starship prompt configuration
 starship init fish | source
-
-# zoxide prompt configuration
-zoxide init fish | source
 
 # rust
 set -gx fish_user_paths $HOME/.cargo/bin $PATH
