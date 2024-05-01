@@ -11,15 +11,8 @@ abbr --add asls aws sso login --profile hp-shared-admin
 # terraform
 abbr --add tf terraform
 
-# helix
-abbr --add vi hx
-
 # nvim
 abbr --add nv nvim
-
-# python
-abbr --add ae source .venv/bin/activate.fish
-abbr --add de deactivate
 
 # git
 abbr --add lg lazygit
@@ -37,9 +30,6 @@ abbr --add zja zellij attach
 abbr --add cb cargo build
 abbr --add cr cargo run
 abbr --add ct cargo test
-
-# just
-abbr --add j just
 
 # yabai and skhd
 abbr --add ystop "yabai --stop-service; skhd --stop-service;"
