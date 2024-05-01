@@ -8,3 +8,8 @@ httpie/
 fontforge/
 lazy-lock.json
 .DS_Store
+evans/
+zed/conversations/
+zed/themes/
+zed/.*
+
