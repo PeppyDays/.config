@@ -11,5 +11,6 @@ lazy-lock.json
 evans/
 zed/conversations/
 zed/themes/
+zed/embeddings/
 zed/.*
 
