@@ -42,6 +42,20 @@ return {
       desc = "Find Plugin File",
     },
     {
+      "<leader>fs",
+      function()
+        require("telescope.builtin").registers()
+      end,
+      desc = "Find Register",
+    },
+    {
+      "<leader>\\",
+      function()
+        require("telescope.builtin").resume()
+      end,
+      desc = "Resume the Last Picker",
+    },
+    {
       "<leader>f\\",
       function()
         require("telescope.builtin").resume()
