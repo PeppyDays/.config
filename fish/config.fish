@@ -4,6 +4,9 @@ fish_add_path /opt/homebrew/bin
 # go bin directory
 fish_add_path ~/go/bin
 
+# greeting message
+set fish_greeting
+
 # default editor to wrapper of nvim
 set -gx EDITOR nvim
 
