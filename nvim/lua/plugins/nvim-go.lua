@@ -5,7 +5,7 @@ return {
     require("go").setup({
       auto_lint = false,
       linter = "golangci-lint",
-      auto_format = true,
+      auto_format = false,
       formatter = "gofumpt",
     })
 
