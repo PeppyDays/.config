@@ -15,4 +15,5 @@ return {
   { "folke/neodev.nvim", enabled = false },
   { "folke/neoconf.nvim", enabled = false },
   { "folke/tokyonight.nvim", enabled = false },
+  { "windwp/nvim-ts-autotag", enabled = false },
 }
