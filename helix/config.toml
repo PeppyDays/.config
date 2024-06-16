@@ -34,12 +34,11 @@ mode.insert = "INSERT"
 mode.select = "SELECT"
 
 [keys.normal]
-# F4 = ":set whitespace.render all"
-# F5 = ":set whitespace.render none"
-C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
-C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 
-# [keys.insert]
+[keys.insert]
+j = { k = "normal_mode" }
 # C-h = "move_char_left"
 # C-l = "move_char_right"
 # C-o = ["normal_mode", "open_below"]
