@@ -27,7 +27,6 @@ keybinds {
     bind "Alt Up" { MoveFocus "Up"; }
   }
 
-
   shared_except "session" "locked" {
     unbind "Ctrl o"
     bind "Ctrl x" { SwitchToMode "Session"; }
