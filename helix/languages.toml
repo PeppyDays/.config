@@ -62,3 +62,8 @@ auto-format = true
 name = "tfvars"
 formatter = { command = "terraform", args = ["fmt", "-"] }
 auto-format = true
+
+[[language]]
+name = "go"
+auto-format = true
+formatter = { command = "goimports" }
