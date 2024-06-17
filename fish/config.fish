@@ -13,6 +13,9 @@ set -gx EDITOR nvim
 # starship prompt configuration
 starship init fish | source
 
+# zoxide prompt configuration
+zoxide init fish | source
+
 # rust
 set -gx fish_user_paths $HOME/.cargo/bin $PATH
 
@@ -29,7 +32,3 @@ end
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
-
-# Setting PATH for Python 3.12
-# The original version is saved in /Users/arine/.config/fish/config.fish.pysave
-set -x PATH "/Library/Frameworks/Python.framework/Versions/3.12/bin" "$PATH"
