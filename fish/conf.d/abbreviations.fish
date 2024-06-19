@@ -24,6 +24,8 @@ abbr --add lt eza -alh --tree
 
 # tmux, terminal multiplexer
 abbr --add tm tmux
+abbr --add tma tmux attach
+abbr --add tmd tmux detach
 
 # zellij, terminal multiplexer
 abbr --add zj zellij
