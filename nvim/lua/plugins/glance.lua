@@ -15,6 +15,20 @@ return {
       mappings = {
         list = {
           ["<C-l>"] = actions.enter_win("preview"), -- Focus preview window
+          ["V"] = function()
+            actions.jump_vsplit()
+            local current_win = vim.api.nvim_get_current_win()
+            vim.cmd("wincmd l")
+            local next_win = vim.api.nvim_get_current_win()
+            if current_win == next_win then
+              vim.cmd("wincmd h")
+              vim.cmd("wincmd h")
+              vim.cmd("close")
+              vim.cmd("wincmd x")
+            else
+              vim.cmd("close")
+            end
+          end,
         },
         preview = {
           ["<C-l>"] = actions.enter_win("list"), -- Focus list window
