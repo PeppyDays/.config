@@ -1,5 +1,6 @@
 # homebrew bin directory
 fish_add_path /opt/homebrew/bin
+fish_add_path /opt/homebrew/sbin
 
 # go bin directory
 fish_add_path ~/go/bin
