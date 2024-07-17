@@ -9,8 +9,5 @@ fontforge/
 lazy-lock.json
 .DS_Store
 evans/
-zed/conversations/
-zed/themes/
-zed/embeddings/
-zed/.*
-tmux/plugins/
+zed/
+
