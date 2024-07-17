@@ -1,8 +1,6 @@
 return {
   -- consider these later
   { "folke/flash.nvim", enabled = false },
-  -- { "folke/noice.nvim", enabled = false },
-  -- { "MunifTanjim/nui.nvim", enabled = false },
   -- maybe not used
   { "nvim-neo-tree/neo-tree.nvim", enabled = false },
   { "akinsho/bufferline.nvim", enabled = false },
@@ -16,4 +14,5 @@ return {
   { "folke/neoconf.nvim", enabled = false },
   { "folke/tokyonight.nvim", enabled = false },
   { "windwp/nvim-ts-autotag", enabled = false },
+  { "echasnovski/mini.icons", enabled = false },
 }
