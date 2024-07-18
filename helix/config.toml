@@ -5,7 +5,7 @@ line-number = "relative"
 scroll-lines = 1
 cursorline = true
 undercurl = true
-# bufferline = "multiple"
+bufferline = "always"
 mouse = false
 color-modes = true
 
@@ -36,12 +36,26 @@ mode.select = "SELECT"
 after-delay.enable = true
 
 [keys.normal]
+# extend lines above
+X = "extend_line_above"
+# move lines up/down
 A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
-C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+
+# file picker keys
+[keys.normal.space]
+"." = "file_picker_in_current_buffer_directory"
+
+# version control system keys
+# FIX: after this, copying and pasting to helix gets slower
+[keys.normal.space.v]
+g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+
+# ui rendering keys
+[keys.normal.space.u]
+w = ":toggle whitespace.render all none"
+h = ":toggle lsp.display-inlay-hints"
+b = ":toggle bufferline always never"
 
 [keys.insert]
 j = { k = "normal_mode" }
-# C-h = "move_char_left"
-# C-l = "move_char_right"
-# C-o = ["normal_mode", "open_below"]
