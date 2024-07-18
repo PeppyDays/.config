@@ -27,9 +27,11 @@ abbr --add tm tmux
 abbr --add tma tmux attach
 abbr --add tmd tmux detach
 
-# zellij, terminal multiplexer
-abbr --add zj zellij
-abbr --add zja zellij attach
+# !!
+function last_history_item
+    echo $history[1]
+end
+abbr -a !! --position anywhere --function last_history_item
 
 # rust
 abbr --add cb cargo build
