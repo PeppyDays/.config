@@ -4,11 +4,10 @@ theme = "catppuccin_frappe"
 line-number = "relative"
 scroll-lines = 1
 cursorline = true
-true-color = true
 undercurl = true
 # bufferline = "multiple"
-auto-save = true
 mouse = false
+color-modes = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -27,15 +26,19 @@ display-inlay-hints = true
 
 [editor.statusline]
 left = ["mode", "spinner", "version-control"]
-center = ["file-modification-indicator", "file-name"]
-right = ["position", "register", "separator", "diagnostics", "file-encoding", "file-type"]
+center = ["file-modification-indicator", "file-name", "read-only-indicator"]
+right = ["position", "total-line-numbers", "register", "diagnostics", "file-encoding", "file-type"]
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
 
+[editor.auto-save]
+after-delay.enable = true
+
 [keys.normal]
 A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
 
 [keys.insert]
 j = { k = "normal_mode" }

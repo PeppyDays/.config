@@ -14,13 +14,13 @@ formatter = { command = "prettier", args = ["--parser", "toml", "--tab-width", "
 
 [[language]]
 name = "fish"
-formatter = { command = "fish_indent" }
 auto-format = true
+formatter = { command = "fish_indent" }
 
 [[language]]
 name = "python"
-formatter = { command = "black", args = ["--quiet", "-"] }
 auto-format = true
+formatter = { command = "black", args = ["--quiet", "-"] }
 
 [language-server.pylsp.config.plugins]
 pyflakes = {enabled = false}
@@ -55,13 +55,13 @@ indent = { tab-width = 4, unit = "    " }
 
 [[language]]
 name = "hcl"
-formatter = { command = "terraform", args = ["fmt", "-"] }
 auto-format = true
+formatter = { command = "terraform", args = ["fmt", "-"] }
 
 [[language]]
 name = "tfvars"
-formatter = { command = "terraform", args = ["fmt", "-"] }
 auto-format = true
+formatter = { command = "terraform", args = ["fmt", "-"] }
 
 [[language]]
 name = "go"
