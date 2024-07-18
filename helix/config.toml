@@ -2,7 +2,6 @@ theme = "catppuccin_frappe"
 
 [editor]
 line-number = "relative"
-scroll-lines = 1
 cursorline = true
 undercurl = true
 bufferline = "always"
@@ -42,14 +41,16 @@ X = "extend_line_above"
 A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 
-# file picker keys
 [keys.normal.space]
+# lf popup
+# TODO: later refer to https://gist.github.com/gabydd/570f0dd5f71dda35241500c18f5d27e3?permalink_comment_id=4664341 to make it work better
+e = ":run-shell-command tmux popup -d \"#{pane_current_path}\" -w 90% -h 90% -E lf"
 "." = "file_picker_in_current_buffer_directory"
+q = ":write-quit-all!"
 
-# version control system keys
-# FIX: after this, copying and pasting to helix gets slower
-[keys.normal.space.v]
-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+[keys.normal.space.l]
+# lazygit popup
+g = ":run-shell-command tmux popup -d \"#{pane_current_path}\" -w 90% -h 90% -E lazygit"
 
 # ui rendering keys
 [keys.normal.space.u]
