@@ -47,6 +47,8 @@ A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_befor
 e = ":run-shell-command tmux popup -d \"#{pane_current_path}\" -w 90% -h 90% -E lf"
 "." = "file_picker_in_current_buffer_directory"
 q = ":write-quit-all!"
+x = ":buffer-close"
+X = ":buffer-close-others"
 
 [keys.normal.space.l]
 # lazygit popup
