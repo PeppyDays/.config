@@ -1,7 +1,5 @@
 -- del unused keymaps
 vim.keymap.del("n", "<leader>K")
-vim.keymap.del("n", "<leader>ww")
-vim.keymap.del("n", "<leader>w-")
 vim.keymap.del("n", "<leader>-")
 vim.keymap.del("n", "<leader>`")
 vim.keymap.del("n", "<leader>L")
