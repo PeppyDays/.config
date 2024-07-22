@@ -44,16 +44,40 @@ A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_befor
 [keys.normal.space]
 # lf popup
 # TODO: later refer to https://gist.github.com/gabydd/570f0dd5f71dda35241500c18f5d27e3?permalink_comment_id=4664341 to make it work better
-e = ":run-shell-command tmux popup -d \"#{pane_current_path}\" -w 90% -h 90% -E lf"
-"." = "file_picker_in_current_buffer_directory"
 q = ":write-quit-all!"
 x = ":buffer-close"
 X = ":buffer-close-others"
+# disabled keys
+F = "no_op"
+g = "no_op"
+s = "no_op"
+S = "no_op"
+d = "no_op"
+D = "no_op"
+a = "no_op"
+C = "no_op"
+A-C = "no_op"
+"/" = "no_op"
 
-# Moved this to tmux configuration
-# [keys.normal.space.l]
-# # lazygit popup
-# g = ":run-shell-command tmux popup -d \"#{pane_current_path}\" -w 90% -h 90% -E lazygit"
+# find keys
+[keys.normal.space.f]
+f = "file_picker"
+F = "file_picker_in_current_directory"
+"." = "file_picker_in_current_buffer_directory"
+e = ":run-shell-command tmux popup -d \"#{pane_current_path}\" -w 90% -h 90% -E lf"
+g = "changed_file_picker"
+"/" = "global_search"
+
+# code keys
+[keys.normal.space.c]
+s = "symbol_picker"
+S = "workspace_symbol_picker"
+d = "diagnostics_picker"
+D = "workspace_diagnostics_picker"
+a = "code_action"
+c = "toggle_comments"
+C = "toggle_block_comments"
+A-C = "toggle_line_comments"
 
 # ui rendering keys
 [keys.normal.space.u]

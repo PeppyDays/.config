@@ -3,9 +3,9 @@ return {
   ft = "go",
   config = function()
     require("go").setup({
-      auto_lint = false,
+      auto_lint = true,
       linter = "golangci-lint",
-      auto_format = false,
+      auto_format = true,
       formatter = "gofumpt",
     })
 
