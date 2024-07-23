@@ -52,12 +52,13 @@ d = "no_op"
 D = "no_op"
 a = "no_op"
 C = "no_op"
-A-C = "no_op"
+A-c = "no_op"
 "/" = "no_op"
 x = "no_op"
 X = "no_op"
 r = "no_op"
 k = "no_op"
+h = "no_op"
 
 # find keys
 [keys.normal.space.f]
@@ -80,13 +81,13 @@ X = ":buffer-close-others"
 a = "code_action"
 r = "rename_symbol"
 k = "hover"
+h = "select_references_to_symbol_under_cursor"
 s = "symbol_picker"
 S = "workspace_symbol_picker"
 d = "diagnostics_picker"
 D = "workspace_diagnostics_picker"
 c = "toggle_comments"
 C = "toggle_block_comments"
-A-C = "toggle_line_comments"
 
 # ui rendering keys
 [keys.normal.space.u]
