@@ -73,8 +73,25 @@ g = "changed_file_picker"
 # buffer keys
 [keys.normal.space.b]
 f = "buffer_picker"
-x = ":buffer-close"
-X = ":buffer-close-others"
+d = ":buffer-close"
+D = ":buffer-close-others"
+
+# window keys
+[keys.normal.space.w]
+d = "wclose"
+D = "wonly"
+q = "no_op"
+C-q = "no_op"
+o = "no_op"
+C-o = "no_op"
+C-w = "no_op"
+C-s = "no_op"
+C-v = "no_op"
+C-t = "no_op"
+C-h = "no_op"
+C-j = "no_op"
+C-k = "no_op"
+C-l = "no_op"
 
 # code keys
 [keys.normal.space.c]
