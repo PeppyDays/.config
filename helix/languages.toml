@@ -46,14 +46,6 @@ command = "clippy"
 extraArgs = ["+nightly"]
 
 [[language]]
-name = "java"
-scope = "source.java"
-injection-regex = "java"
-file-types = ["java"]
-roots = ["build.gradle", "build.gradle.kts", "settings.gradle", "settings.gradle.kts"]
-indent = { tab-width = 4, unit = "    " }
-
-[[language]]
 name = "hcl"
 auto-format = true
 formatter = { command = "terraform", args = ["fmt", "-"] }

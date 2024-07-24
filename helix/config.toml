@@ -36,7 +36,7 @@ after-delay.enable = true
 
 [keys.normal]
 # extend lines above
-X = "extend_line_above"
+# X = "extend_line_above"
 # move lines up/down
 A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
