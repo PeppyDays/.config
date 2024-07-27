@@ -58,4 +58,4 @@ formatter = { command = "terraform", args = ["fmt", "-"] }
 [[language]]
 name = "go"
 auto-format = true
-formatter = { command = "gofumpt" }
+formatter = { command = "goimports" }
