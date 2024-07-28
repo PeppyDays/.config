@@ -113,3 +113,4 @@ b = ":toggle bufferline always never"
 
 [keys.insert]
 j = { k = "normal_mode" }
+C-p = "kill_to_line_end"
