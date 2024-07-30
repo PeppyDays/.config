@@ -15,4 +15,5 @@ return {
   { "folke/tokyonight.nvim", enabled = false },
   { "windwp/nvim-ts-autotag", enabled = false },
   { "echasnovski/mini.icons", enabled = false },
+  { "folke/persistence.nvim", enabled = false },
 }
