@@ -9,10 +9,11 @@ TERM = "xterm-256color"
 padding.x = 10
 padding.y = 10
 decorations = "buttonless"
+option_as_alt = "Both"
 
 [font]
 normal.family = "Operator Mono"
 normal.style = "Light"
 bold.style = "Medium"
 size = 16
-offset.y = 5
+offset.y = 10
