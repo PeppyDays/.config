@@ -4,7 +4,7 @@ gui:
   # https://github.com/catppuccin/lazygit
   theme:
     activeBorderColor:
-      - "#a6d189"
+      - "#ef9f76"
       - bold
     inactiveBorderColor:
       - "#a5adce"
@@ -12,18 +12,18 @@ gui:
       - "#8caaee"
     selectedLineBgColor:
       - "#414559"
-    selectedRangeBgColor:
-      - "#414559"
     cherryPickedCommitBgColor:
       - "#51576d"
     cherryPickedCommitFgColor:
-      - "#a6d189"
+      - "#ef9f76"
     unstagedChangesColor:
       - "#e78284"
     defaultFgColor:
       - "#c6d0f5"
     searchingActiveBorderColor:
       - "#e5c890"
+  authorColors:
+    "*": "#babbf1"
 
 git:
   paging:
