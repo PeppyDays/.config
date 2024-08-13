@@ -10,4 +10,4 @@ lazy-lock.json
 .DS_Store
 evans/
 zed/
-
+__pycache__/
