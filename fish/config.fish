@@ -20,6 +20,9 @@ starship init fish | source
 # zoxide prompt configuration
 zoxide init fish | source
 
+# fuck prompt cohnfiguration
+thefuck --alias | source
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
 end
