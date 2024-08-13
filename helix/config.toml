@@ -1,4 +1,5 @@
-theme = "catppuccin_frappe_modified"
+# theme = "catppuccin_frappe_modified"
+theme = "flatwhite"
 
 [editor]
 line-number = "relative"
