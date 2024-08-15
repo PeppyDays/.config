@@ -6,8 +6,8 @@ import = [
 TERM = "xterm-256color"
 
 [window]
-padding.x = 10
-padding.y = 10
+padding.x = 5
+padding.y = 5
 decorations = "buttonless"
 option_as_alt = "Both"
 
