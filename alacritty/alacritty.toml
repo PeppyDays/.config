@@ -13,7 +13,7 @@ option_as_alt = "Both"
 
 [font]
 normal.family = "Operator Mono"
-normal.style = "Light"
+normal.style = "Book"
 bold.style = "Medium"
 size = 16
 offset.y = 10
