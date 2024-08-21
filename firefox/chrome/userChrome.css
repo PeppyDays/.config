@@ -36,6 +36,10 @@
     display: none !important;
 }
 
+#urlbar-input::placeholder {
+    color: transparent;
+}
+
 #tracking-protection-icon-container {
     display: none !important;
 }
