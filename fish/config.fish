@@ -3,7 +3,8 @@ fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/sbin
 
 # go bin directory
-fish_add_path ~/go/bin
+# fish_add_path ~/go/bin
+fish_add_path /opt/homebrew/opt/go@1.22/bin
 
 # rust bin directory
 set -gx fish_user_paths $HOME/.cargo/bin $PATH
