@@ -39,8 +39,9 @@ mypy = {enabled = true, live_mode = true, strict = true}
 name = "rust"
 auto-format = true
 
-[language-server.rust-analyzer.config.check]
-command = "clippy"
+[language-server.rust-analyzer.config]
+imports = { granularity = { group = "item" }, prefix = "crate" }
+check = { command = "clippy" }
 
 [language-server.rust-analyzer.rustfmt]
 extraArgs = ["+nightly"]
