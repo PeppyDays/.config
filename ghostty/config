@@ -1,0 +1,9 @@
+theme = catppuccin-frappe
+
+font-family = "Operator Mono"
+font-style = "Book"
+font-style-bold = "Medium"
+font-size = 16
+
+title = " "
+macos-titlebar-style = hidden
