@@ -40,6 +40,8 @@ after-delay.enable = true
 # move lines up/down
 A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+# enter works in normal mode
+ret = ["open_below", "normal_mode"]
 
 [keys.normal.space]
 q = ":write-quit-all!"
@@ -104,6 +106,7 @@ d = "diagnostics_picker"
 D = "workspace_diagnostics_picker"
 c = "toggle_comments"
 C = "toggle_block_comments"
+f = ":format"
 
 # ui rendering keys
 [keys.normal.space.u]
@@ -114,3 +117,5 @@ b = ":toggle bufferline always never"
 [keys.insert]
 j = { k = "normal_mode" }
 C-p = "kill_to_line_end"
+S-ret = ["normal_mode", "open_below"]
+
