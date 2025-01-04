@@ -7,6 +7,8 @@ undercurl = true
 bufferline = "always"
 mouse = false
 color-modes = true
+continue-comments = false
+end-of-line-diagnostics = "hint"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -33,6 +35,9 @@ mode.select = "SELECT"
 
 [editor.auto-save]
 after-delay.enable = true
+
+[editor.inline-diagnostics]
+cursor-line = "error"
 
 [keys.normal]
 # extend lines above
@@ -117,5 +122,5 @@ b = ":toggle bufferline always never"
 [keys.insert]
 j = { k = "normal_mode" }
 C-p = "kill_to_line_end"
-S-ret = ["normal_mode", "open_below"]
+A-ret = ["normal_mode", "open_below"]
 
