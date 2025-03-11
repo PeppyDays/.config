@@ -37,7 +37,7 @@ mode.select = "SELECT"
 after-delay.enable = true
 
 [editor.inline-diagnostics]
-cursor-line = "error"
+cursor-line = "info"
 
 [keys.normal]
 # extend lines above
@@ -69,6 +69,7 @@ h = "no_op"
 
 # find keys
 [keys.normal.space.f]
+b = "buffer_picker"
 f = "file_picker"
 F = "file_picker_in_current_directory"
 e = [":new", ":insert-output tmux popup -d \"#{pane_current_path}\" -w 90% -h 90% -E \"lf -print-selection > /tmp/lf_selection\"", ":insert-output cat /tmp/lf_selection", "split_selection_on_newline", "goto_file", "goto_last_modification", "goto_last_modified_file", ":buffer-close!"]
