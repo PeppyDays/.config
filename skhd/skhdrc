@@ -66,3 +66,10 @@ hyper - 5 : yabai -m window --space 5
 # move window to display left and right
 hyper - left : yabai -m window --display west; yabai -m display --focus west;
 hyper - right : yabai -m window --display east; yabai -m display --focus east;
+
+# map applications
+rcmd + ralt - s : open -a /Applications/Slack.app
+rcmd + ralt - t : open -a /Applications/Alacritty.app
+rcmd + ralt - f : open -a /Applications/Firefox.app
+rcmd + ralt - n : open -a /Applications/Notion.app
+
