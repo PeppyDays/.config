@@ -7,7 +7,15 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "base_keymap": "JetBrains",
+  "icon_theme": "Catppuccin Frappé",
+  "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
+    "version": "2"
+  },
+  // "base_keymap": "JetBrains",
   "theme": "Catppuccin Frappé",
   "inlay_hints": {
     "enabled": true,
@@ -18,6 +26,11 @@
   },
   "relative_line_numbers": true,
   "vim_mode": true,
+  "vim": {
+    // "default_mode": "helix_normal",
+    "use_multiline_find": true,
+    "use_smartcase_find": true
+  },
   "scrollbar": {
     "show": "never"
   },
@@ -36,31 +49,17 @@
       "initialization_options": {
         "check": {
           "command": "clippy"
-        }
-      }
-    },
-    "gopls": {
-      "initialization_options": {
-        "gofumpt": true,
-        "usePlaceholders": true,
-        "staticcheck": true,
-        "codelenses": {
-          "gc_details": true,
-          "generate": true,
-          "regenerate_cgo": true,
-          "tidy": true,
-          "upgrade_dependency": true,
-          "vendor": true
         },
-        "hints": {
-          "assignVariableTypes": true,
-          "compositeLiteralFields": true,
-          "compositeLiteralTypes": true,
-          "constantValues": true,
-          "functionTypeParameters": true,
-          "parameterNames": true,
-          "rangeVariableTypes": true
+        "imports": {
+          "preferPrelude": true,
+          "granularity": {
+            "group": "item"
+          },
+          "prefix": "crate"
         }
+      },
+      "rustfmt": {
+        "extraArgs": ["+nightly"]
       }
     }
   }
