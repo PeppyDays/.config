@@ -40,7 +40,7 @@ name = "rust"
 auto-format = true
 
 [language-server.rust-analyzer.config]
-imports = { granularity = { group = "item" }, prefix = "crate" }
+imports = { preferPrelude = true, granularity = { group = "item", enforce = true }, prefix = "crate" }
 check = { command = "clippy" }
 
 [language-server.rust-analyzer.rustfmt]
