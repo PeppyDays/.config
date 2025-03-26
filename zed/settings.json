@@ -26,7 +26,7 @@
   "relative_line_numbers": true,
   "vim_mode": true,
   "vim": {
-    // "default_mode": "helix_normal",
+    "default_mode": "helix_normal",
     "use_multiline_find": true,
     "use_smartcase_find": true
   },
