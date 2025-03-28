@@ -1,6 +1,7 @@
 [
   {
     "bindings": {
+      // Move along panes
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-j": "workspace::ActivatePaneDown",
       "ctrl-k": "workspace::ActivatePaneUp",
@@ -31,8 +32,20 @@
     }
   },
   {
+    "context": "vim_mode == helix_normal || vim_mode == visual && !menu",
+    "bindings": {
+      // Goto mode
+      "g g": "vim::StartOfDocument",
+      "g e": "vim::EndOfDocument",
+      "g h": "vim::StartOfLine",
+      "g l": "vim::EndOfLine",
+      "g s": "vim::FirstNonWhitespace"
+    }
+  },
+  {
     "context": "vim_mode == helix_normal && !menu",
     "bindings": {
+      ": w enter": "workspace::Save",
       // Basic actions
       "ctrl-shift-y": "vim::VisualYank",
       "y": ["workspace::SendKeystrokes", "ctrl-shift-y escape"],
@@ -58,11 +71,6 @@
       "ctrl-d": "vim::ScrollDown",
       "ctrl-u": "vim::ScrollUp",
       // Goto mode
-      "g g": "vim::StartOfDocument",
-      "g e": "vim::EndOfDocument",
-      "g h": "vim::StartOfLine",
-      "g l": "vim::EndOfLine",
-      "g s": "vim::FirstNonWhitespace",
       "g d": "editor::GoToDefinition",
       "g v d": "editor::GoToDefinitionSplit",
       "g D": "editor::GoToDeclaration",
@@ -77,6 +85,12 @@
       "g b": "vim::WindowBottom",
       "g n": "pane::ActivateNextItem",
       "g p": "pane::ActivatePreviousItem",
+      // Find actions
+      "space f b": "tab_switcher::Toggle",
+      "space f f": "file_finder::Toggle",
+      "space f e": "workspace::ToggleLeftDock",
+      "space f t": "workspace::ToggleBottomDock",
+      "space f /": "pane::DeploySearch",
       // Match mode
       "m m": "vim::Matching",
       "m d": "vim::PushDeleteSurrounds",
@@ -91,12 +105,6 @@
       "space c D": "diagnostics::Deploy",
       "space c c": "editor::ToggleComments",
       "space c f": "editor::Format",
-      // Find actions
-      "space f b": "tab_switcher::Toggle",
-      "space f f": "file_finder::Toggle",
-      "space f e": "workspace::ToggleLeftDock",
-      "space f t": "workspace::ToggleBottomDock",
-      "space f /": "pane::DeploySearch",
       // Buffer actions
       "space b f": "tab_switcher::Toggle",
       "space b d": ["pane::CloseActiveItem", { "close_pinned": false }],
@@ -110,6 +118,8 @@
       "space w l": "workspace::ActivatePaneRight",
       "space w d": "pane::CloseAllItems",
       "space w z": "workspace::ToggleZoom",
+      // UI actions
+      "space u h": "editor::ToggleInlayHints",
       // Move actions
       "] d": "editor::GoToDiagnostic",
       "[ d": "editor::GoToPreviousDiagnostic",
