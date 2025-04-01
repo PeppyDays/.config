@@ -5,54 +5,102 @@ P = function(f)
   return f
 end
 
-local keymap = vim.keymap -- for conciseness
+local keymap = vim.keymap
 
--- Neovim
-keymap.set("n", "<esc>", "<cmd>nohl<cr>")
--- keymap.set("n", "<C-q>", "<cmd>qa!<CR>", { desc = "Close Neovim" })
-keymap.set("n", "<leader>w", "<cmd>wa<CR>", { desc = "Save Changes" })
+-- Better up/down
+keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
+keymap.set({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
+keymap.set({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
+keymap.set({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 
--- noremap
-keymap.set("n", "<C-I>", "<C-I>", { noremap = true })
+-- Resize window using <ctrl> arrow keys
+keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
+keymap.set("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
+keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
+keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
--- disable updating register for x and c
-keymap.set("n", "x", '"_x')
-keymap.set("v", "c", '"_c')
-keymap.set("n", "C", '"_C')
+-- Move Lines
+keymap.set("n", "<A-j>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
+keymap.set("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
+keymap.set("n", "<A-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up" })
+keymap.set("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
+keymap.set("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
+keymap.set("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
 
--- window management
-keymap.set("n", "<C-l>", "<C-w>l", { desc = "Change window to right" })
-keymap.set("n", "<C-h>", "<C-w>h", { desc = "Change window to left" })
-keymap.set("n", "<C-j>", "<C-w>j", { desc = "Change window to bottom" })
-keymap.set("n", "<C-k>", "<C-w>k", { desc = "Change window to top" })
-keymap.set("n", "<C-x>", "<cmd>close<CR>", { desc = "Close current split" })
+-- Buffers
+keymap.set("n", "gp", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
+keymap.set("n", "gn", "<cmd>bnext<cr>", { desc = "Next Buffer" })
+keymap.set("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
+keymap.set("n", "]b", "<cmd>bnext<cr>", { desc = "Next Buffer" })
+keymap.set("n", "<leader>bn", "<cmd>new<CR>", { desc = "New buffer" })
+keymap.set("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
+keymap.set("n", "<leader>bd", function()
+  Snacks.bufdelete()
+end, { desc = "Delete Buffer" })
+keymap.set("n", "<leader>bo", function()
+  Snacks.bufdelete.other()
+end, { desc = "Delete Other Buffers" })
+keymap.set("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
 
--- splits management
-keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
-keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
-keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
-keymap.set("n", "<leader>sm", "<C-w>|<C-w>_", { desc = "Max out the window" })
-keymap.set("n", "<leader>ss", "<C-w>x", { desc = "Swap current with next" })
-keymap.set("n", "<leader>sx", "<C-w>o", { desc = "Close all other windows" })
+-- Clear search, diff update and redraw
+keymap.set("n", "<leader>ur", "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
+  { desc = "Redraw / Clear hlsearch / Diff Update" })
 
--- resize with arrows
+-- Better indenting
+keymap.set("v", "<", "<gv")
+keymap.set("v", ">", ">gv")
+
+-- Location list
+keymap.set("n", "<leader>xl", function()
+  local success, err = pcall(vim.fn.getloclist(0, { winid = 0 }).winid ~= 0 and vim.cmd.lclose or vim.cmd.lopen)
+  if not success and err then
+    vim.notify(err, vim.log.levels.ERROR)
+  end
+end, { desc = "Location List" })
+
+-- Quickfix list
+keymap.set("n", "<leader>xq", function()
+  local success, err = pcall(vim.fn.getqflist({ winid = 0 }).winid ~= 0 and vim.cmd.cclose or vim.cmd.copen)
+  if not success and err then
+    vim.notify(err, vim.log.levels.ERROR)
+  end
+end, { desc = "Quickfix List" })
+
+keymap.set("n", "[q", vim.cmd.cprev, { desc = "Previous Quickfix" })
+keymap.set("n", "]q", vim.cmd.cnext, { desc = "Next Quickfix" })
+
+-- diagnostic
+local diagnostic_goto = function(next, severity)
+  local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+  severity = severity and vim.diagnostic.severity[severity] or nil
+  return function()
+    go({ severity = severity })
+  end
+end
+
+keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+keymap.set("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
+keymap.set("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })
+keymap.set("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
+keymap.set("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
+keymap.set("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
+keymap.set("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
+
+-- Resize with arrows
 keymap.set("n", "<A-Down>", "<cmd>resize -4<cr>", { desc = "Smaller horizontal split" })
 keymap.set("n", "<A-Up>", "<cmd>resize +4<cr>", { desc = "Bigger horizontal split" })
 keymap.set("n", "<A-Left>", "<cmd>vertical resize -4<cr>", { desc = "Smaller vertical split" })
 keymap.set("n", "<A-Right>", "<cmd>vertical resize +4<cr>", { desc = "Bigger vertical split" })
 
--- tabs management
-keymap.set("n", "<leader>tn", "<cmd>tabnew<CR>", { desc = "Open new tab" })
--- keymap.set("n", "<leader>td", "<cmd>tabclose<CR>", { desc = "Close current tab" })
-keymap.set("n", "[t", "<cmd>tabn<CR>", { desc = "Go to next tab" })
-keymap.set("n", "]t", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
+-- Window
+keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Split window vertically" })
+keymap.set("n", "<leader>ws", "<C-w>s", { desc = "Split window horizontally" })
+keymap.set("n", "<leader>we", "<C-w>=", { desc = "Make splits equal size" })
+keymap.set("n", "<leader>wz", "<C-w>|<C-w>_", { desc = "Max out the window" })
+keymap.set("n", "<leader>ws", "<C-w>x", { desc = "Swap current with next" })
+keymap.set("n", "<leader>wx", "<C-w>o", { desc = "Close all other windows" })
 
--- buffers management
--- keymap.set("n", "<C-]>", "<cmd>bn<CR>", { desc = "Go to next buffer" })
--- keymap.set("n", "<C-[>", "<cmd>bp<CR>", { desc = "Go to previous buffer" })
-keymap.set("n", "<leader>bn", "<cmd>new<CR>", { desc = "New buffer" })
--- keymap.set("n", "<leader>bd", "<cmd>bd<CR>", { desc = "Close current buffer" })
--- keymap.set("n", "<leader>bx", "<cmd>%bd|e#|bd#<CR>", { desc = "Close all buffers but this" })
+
 
 -- copy & paste
 keymap.set("x", "p", '"_dP')
