@@ -5,8 +5,7 @@ return {
   priority = 1000,
   config = function()
     require("catppuccin").setup({
-      -- flavour = "macchiato",
-      flavour = "mocha",
+      flavour = "frappe",
       transparent_background = false,
       term_colors = true,
       dim_inactive = {
@@ -31,7 +30,7 @@ return {
       end,
       integrations = {
         blink_cmp = true,
-        barbar = true,
+        barbar = false,
         fidget = true,
         octo = true,
         which_key = true,
