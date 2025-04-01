@@ -3,6 +3,9 @@ return {
   priority = 1000,
   lazy = false,
   opts = {
+    animate = {
+      eenabled = false,
+    },
     words = { enabled = true },
     bigfile = { enabled = true },
     input = {},
