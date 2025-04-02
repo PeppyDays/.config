@@ -32,15 +32,15 @@ keymap.set("n", "gp", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 keymap.set("n", "gn", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 keymap.set("n", "[b", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 keymap.set("n", "]b", "<cmd>bnext<cr>", { desc = "Next Buffer" })
-keymap.set("n", "<leader>bn", "<cmd>new<CR>", { desc = "New buffer" })
-keymap.set("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
-keymap.set("n", "<leader>bd", function()
-  Snacks.bufdelete()
-end, { desc = "Delete Buffer" })
-keymap.set("n", "<leader>bo", function()
-  Snacks.bufdelete.other()
-end, { desc = "Delete Other Buffers" })
-keymap.set("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
+keymap.set("n", "<leader>bD", "<cmd>:bd!<cr>", { desc = "Delete Buffer and Window" })
+
+-- Clear search and stop snippet on escape
+keymap.set('n', '<Esc>', function()
+  if vim.v.hlsearch == 1 then
+    vim.cmd('nohlsearch')
+  end
+  return '<Esc>'
+end, { expr = true, silent = true })
 
 -- Clear search, diff update and redraw
 keymap.set("n", "<leader>ur", "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
@@ -93,20 +93,19 @@ keymap.set("n", "<A-Left>", "<cmd>vertical resize -4<cr>", { desc = "Smaller ver
 keymap.set("n", "<A-Right>", "<cmd>vertical resize +4<cr>", { desc = "Bigger vertical split" })
 
 -- Window
-keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Split window vertically" })
+keymap.set("n", "<leader>wh", "<C-w>h", { desc = "Move to window left" })
+keymap.set("n", "<leader>wj", "<C-w>j", { desc = "Move to window below" })
+keymap.set("n", "<leader>wk", "<C-w>k", { desc = "Move to window above" })
+keymap.set("n", "<leader>wl", "<C-w>l", { desc = "Move to window right" })
 keymap.set("n", "<leader>ws", "<C-w>s", { desc = "Split window horizontally" })
-keymap.set("n", "<leader>we", "<C-w>=", { desc = "Make splits equal size" })
-keymap.set("n", "<leader>wz", "<C-w>|<C-w>_", { desc = "Max out the window" })
-keymap.set("n", "<leader>ws", "<C-w>x", { desc = "Swap current with next" })
-keymap.set("n", "<leader>wx", "<C-w>o", { desc = "Close all other windows" })
-
-
-
--- copy & paste
-keymap.set("x", "p", '"_dP')
-keymap.set("x", "Y", "y$", { desc = "Yank to end of line" })
-keymap.set("n", "<leader>DD", '"_dd', { desc = "Delete without changing register" })
-keymap.set("v", "<leader>DD", '"_dd', { desc = "Delete without changing register" })
+keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Split window vertically" })
+keymap.set("n", "<leader>we", "<C-w>=", { desc = "Equalize window sizes" })
+keymap.set("n", "<leader>w_", "<C-w>_", { desc = "Maximize window height" })
+keymap.set("n", "<leader>w|", "<C-w>|", { desc = "Maximize window width" })
+keymap.set("n", "<leader>wd", "<C-w>q", { desc = "Close current window" })
+keymap.set("n", "<leader>wD", "<C-w>o", { desc = "Close all other windows" })
+keymap.set("n", "<leader>wr", "<C-w>r", { desc = "Rotate windows" })
+keymap.set("n", "<leader>wx", "<C-w>x", { desc = "Swap with next window" })
 
 -- scrolling
 keymap.set("n", "<C-d>", "<C-d>zz")

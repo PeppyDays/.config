@@ -37,16 +37,16 @@ return {
     -- { "<leader>fF", function() enhanced_picker(Snacks.picker.files) end,                    desc = "Find Files with Selection" },
     -- { "<leader>fG", function() enhanced_picker(Snacks.picker.grep) end,                     desc = "Grep with Selection" },
     -- { "<leader>fS", function() enhanced_picker(Snacks.picker.lsp_workspace_symbols) end,    desc = "Find Symbols with Selection" },
-    { "]]",         function() Snacks.words.jump(vim.v.count1) end,                         desc = "Next Reference",                           mode = { "n", "t" } },
-    { "[[",         function() Snacks.words.jump(-vim.v.count1) end,                        desc = "Prev Reference",                           mode = { "n", "t" } },
+    { "]]",         function() Snacks.words.jump(vim.v.count1) end,                         desc = "Next Reference",              mode = { "n", "t" } },
+    { "[[",         function() Snacks.words.jump(-vim.v.count1) end,                        desc = "Prev Reference",              mode = { "n", "t" } },
 
     { "gd",         function() Snacks.picker.lsp_definitions() end,                         desc = "Goto Definition" },
     { "gD",         function() Snacks.picker.lsp_declarations() end,                        desc = "Goto Declaration" },
-    { "gr",         function() Snacks.picker.lsp_references() end,                          nowait = true,                                     desc = "References" },
+    { "gr",         function() Snacks.picker.lsp_references() end,                          nowait = true,                        desc = "References" },
     { "gi",         function() Snacks.picker.lsp_implementations() end,                     desc = "Goto Implementation" },
     { "gy",         function() Snacks.picker.lsp_type_definitions() end,                    desc = "Goto T[y]pe Definition" },
 
-    { "<leader>bx", function() Snacks.bufdelete.other() end,                                desc = "Delete all buffers except the current one" },
-    { "<A-x>",      function() Snacks.bufdelete() end,                                      desc = "Delete buffer" }
+    { "<leader>bd", function() Snacks.bufdelete() end,                                      desc = "Delete buffer" },
+    { "<leader>bo", function() Snacks.bufdelete.other() end,                                desc = "Delete other buffers" },
   }
 }
