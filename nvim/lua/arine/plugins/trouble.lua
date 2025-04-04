@@ -1,6 +1,8 @@
 return {
   "folke/trouble.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = {
+    -- "nvim-tree/nvim-web-devicons",
+  },
   event = { "BufReadPre", "BufNewFile" },
   keys = {
     { "<leader>td", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Open a Trouble" } },

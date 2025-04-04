@@ -4,7 +4,7 @@ return {
   lazy = false,
   opts = {
     animate = {
-      eenabled = false,
+      enabled = false,
     },
     words = { enabled = true },
     bigfile = { enabled = true },

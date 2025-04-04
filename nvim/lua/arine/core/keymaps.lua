@@ -22,9 +22,9 @@ keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase W
 -- Move Lines
 keymap.set("n", "<A-j>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
 keymap.set("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
+keymap.set("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
 keymap.set("n", "<A-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up" })
 keymap.set("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
-keymap.set("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
 keymap.set("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
 
 -- Buffers
@@ -86,12 +86,6 @@ keymap.set("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
 keymap.set("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
 keymap.set("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 
--- Resize with arrows
-keymap.set("n", "<A-Down>", "<cmd>resize -4<cr>", { desc = "Smaller horizontal split" })
-keymap.set("n", "<A-Up>", "<cmd>resize +4<cr>", { desc = "Bigger horizontal split" })
-keymap.set("n", "<A-Left>", "<cmd>vertical resize -4<cr>", { desc = "Smaller vertical split" })
-keymap.set("n", "<A-Right>", "<cmd>vertical resize +4<cr>", { desc = "Bigger vertical split" })
-
 -- Window
 keymap.set("n", "<leader>wh", "<C-w>h", { desc = "Move to window left" })
 keymap.set("n", "<leader>wj", "<C-w>j", { desc = "Move to window below" })
@@ -106,6 +100,8 @@ keymap.set("n", "<leader>wd", "<C-w>q", { desc = "Close current window" })
 keymap.set("n", "<leader>wD", "<C-w>o", { desc = "Close all other windows" })
 keymap.set("n", "<leader>wr", "<C-w>r", { desc = "Rotate windows" })
 keymap.set("n", "<leader>wx", "<C-w>x", { desc = "Swap with next window" })
+keymap.set("n", "<leader>w<", "<cmd>vertical resize -4<cr>", { desc = "Smaller vertical split" })
+keymap.set("n", "<leader>w>", "<cmd>vertical resize +4<cr>", { desc = "Bigger vertical split" })
 
 -- scrolling
 keymap.set("n", "<C-d>", "<C-d>zz")
@@ -115,20 +111,15 @@ keymap.set('n', '<C-b>', '<C-b>zz')
 keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
 
--- indenting
-keymap.set("v", "<s-tab>", "<gv", { desc = "Indent left" })
-keymap.set("v", "<tab>", ">gv", { desc = "Indent right" })
-keymap.set("n", "<s-tab>", "<<", { desc = "Indent left" })
-keymap.set("n", "<tab>", ">>", { desc = "Indent right" })
-
 -- moving blocks up and down
 keymap.set("v", "<C-g>", "<cmd>m .+1<CR>gv=gv", { desc = "Move text down" })
 keymap.set("v", "<C-t>", "<cmd>m .-2<CR>gv=gv", { desc = "Move text up" })
 
+-- moving
+keymap.set("n", "]p", '<cmd>execute "keepjumps norm! }"<cr>', { desc = "Next Paragraph" })
+keymap.set("n", "[p", '<cmd>execute "keepjumps norm! {"<cr>', { desc = "Previous Paragraph" })
+
 -- other
 keymap.set("n", "<leader>mm", "<cmd>messages<cr>", { desc = "Show messages" })
-keymap.set("n", "}", '<cmd>execute "keepjumps norm! }"<cr>', { desc = "Next Paragraph" })
-keymap.set("n", "{", '<cmd>execute "keepjumps norm! {"<cr>', { desc = "Previous Paragraph" })
-
 keymap.set("n", "<leader>qq", "<cmd>qa!<cr>", { desc = "Quit" })
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })

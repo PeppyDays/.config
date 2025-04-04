@@ -3,7 +3,7 @@ return {
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope.nvim',
-    'nvim-tree/nvim-web-devicons',  
+    -- 'nvim-tree/nvim-web-devicons',
   },
   config = function()
     local octo = require("octo")
