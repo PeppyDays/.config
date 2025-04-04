@@ -130,5 +130,5 @@ keymap.set("n", "<leader>mm", "<cmd>messages<cr>", { desc = "Show messages" })
 keymap.set("n", "}", '<cmd>execute "keepjumps norm! }"<cr>', { desc = "Next Paragraph" })
 keymap.set("n", "{", '<cmd>execute "keepjumps norm! {"<cr>', { desc = "Previous Paragraph" })
 
-keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit" })
+keymap.set("n", "<leader>qq", "<cmd>qa!<cr>", { desc = "Quit" })
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
