@@ -3,5 +3,6 @@ return {
   opts = {
     -- TODO: Fix broken icons in explorer
     dashboard = { enabled = false },
+    explorer = { enabled = false },
   },
 }
