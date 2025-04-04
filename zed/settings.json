@@ -11,7 +11,7 @@
   "assistant": {
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gpt-4o"
+      "model": "claude-3-7-sonnet"
     },
     "version": "2"
   },
@@ -27,7 +27,7 @@
   "relative_line_numbers": true,
   "vim_mode": true,
   "vim": {
-    "default_mode": "helix_normal",
+    "default_mode": "normal",
     "use_multiline_find": true,
     "use_smartcase_find": true
   },
@@ -50,6 +50,7 @@
         "check": {
           "command": "clippy"
         },
+        "checkOnSave": false,
         "imports": {
           "preferPrelude": true,
           "granularity": {

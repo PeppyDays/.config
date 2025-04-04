@@ -9,5 +9,8 @@ fontforge/
 lazy-lock.json
 .DS_Store
 evans/
-zed/
+zed/conversations
+zed/embeddings
+zed/prompts
+zed/.*
 __pycache__/
