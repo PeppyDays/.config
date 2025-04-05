@@ -14,8 +14,6 @@ return {
     local lualine_require = require("lualine_require")
     lualine_require.require = require
 
-    local icons = LazyVim.config.icons
-
     vim.o.laststatus = vim.g.lualine_laststatus
 
     local opts = {
@@ -72,7 +70,7 @@ return {
           },
           -- stylua: ignore
           {
-            function() return "  " .. require("dap").status() end,
+            function() return "dap " .. require("dap").status() end,
             cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
             color = function() return { fg = Snacks.util.color("Debug") } end,
           },
@@ -85,9 +83,9 @@ return {
           {
             "diff",
             symbols = {
-              added = icons.git.added,
-              modified = icons.git.modified,
-              removed = icons.git.removed,
+              added = "+ ",
+              modified = "~ ",
+              removed = "- ",
             },
             source = function()
               local gitsigns = vim.b.gitsigns_status_dict
