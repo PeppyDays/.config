@@ -4,3 +4,8 @@
 
 -- Disable snacks animation
 vim.g.snacks_animate = false
+
+-- Modify folding characters
+vim.opt.fillchars:append({
+  foldclose = ">",
+})
