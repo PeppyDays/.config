@@ -6,12 +6,14 @@ return {
         style = "none",
       },
       modified_icon = icons.git.modified,
+      show_close_icon = false,
       show_buffer_close_icons = false,
+      left_trunc_marker = "..",
+      right_trunc_marker = "..",
       diagnostics_indicator = function(_, _, diag)
         local ret = (diag.error and icons.diagnostic.error or "") .. (diag.warning and icons.diagnostic.warning or "")
         return vim.trim(ret)
       end,
-      show_close_icon = false,
     },
   },
 }
