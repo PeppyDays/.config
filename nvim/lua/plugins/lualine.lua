@@ -33,10 +33,10 @@ return {
           {
             "diagnostics",
             symbols = {
-              error = "e ",
-              warn = "w ",
-              info = "i ",
-              hint = "h ",
+              error = icons.diagnostic.error .. " ",
+              warn = icons.diagnostic.warn .. " ",
+              info = icons.diagnostic.info .. " ",
+              hint = icons.diagnostic.hint .. " ",
             },
           },
           { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
@@ -44,7 +44,7 @@ return {
         },
         lualine_x = {
           Snacks.profiler.status(),
-          LazyVim.lualine.status("copilot ", function()
+          LazyVim.lualine.status(icons.ai.copilot, function()
             local clients = package.loaded["copilot"] and LazyVim.lsp.get_clients({ name = "copilot", bufnr = 0 }) or {}
             if #clients > 0 then
               local status = require("copilot.api").status.data.status
@@ -83,9 +83,9 @@ return {
           {
             "diff",
             symbols = {
-              added = "+ ",
-              modified = "~ ",
-              removed = "- ",
+              added = icons.git.added .. " ",
+              modified = icons.git.modified .. " ",
+              removed = icons.git.deleted .. " ",
             },
             source = function()
               local gitsigns = vim.b.gitsigns_status_dict

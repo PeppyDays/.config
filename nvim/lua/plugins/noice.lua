@@ -3,7 +3,7 @@ return {
   opts = {
     cmdline = {
       format = {
-        cmdline = { icon = ">" },
+        cmdline = { icon = icons.cmd.prompt },
         search_down = { icon = "search down" },
         search_up = { icon = "search up" },
         filter = { icon = "filter" },
@@ -15,9 +15,9 @@ return {
     format = {
       level = {
         icons = {
-          error = "e",
-          warn = "w",
-          info = "i",
+          error = icons.diagnostic.error,
+          warn = icons.diagnostic.warn,
+          info = icons.diagnostic.info,
         },
       },
     },

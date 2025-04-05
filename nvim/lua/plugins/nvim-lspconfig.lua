@@ -11,10 +11,10 @@ return {
       diagnostics = {
         signs = {
           text = {
-            [vim.diagnostic.severity.ERROR] = "e",
-            [vim.diagnostic.severity.WARN] = "w",
-            [vim.diagnostic.severity.INFO] = "i",
-            [vim.diagnostic.severity.HINT] = "h",
+            [vim.diagnostic.severity.ERROR] = icons.diagnostic.error,
+            [vim.diagnostic.severity.WARN] = icons.diagnostic.warn,
+            [vim.diagnostic.severity.INFO] = icons.diagnostic.info,
+            [vim.diagnostic.severity.HINT] = icons.diagnostic.hint,
           },
         },
       },

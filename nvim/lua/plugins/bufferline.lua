@@ -5,10 +5,10 @@ return {
       indicator = {
         style = "none",
       },
-      modified_icon = "*",
+      modified_icon = icons.git.modified,
       show_buffer_close_icons = false,
       diagnostics_indicator = function(_, _, diag)
-        local ret = (diag.error and "e " .. diag.error .. " " or "") .. (diag.warning and "w " .. diag.warning or "")
+        local ret = (diag.error and icons.diagnostic.error or "") .. (diag.warning and icons.diagnostic.warning or "")
         return vim.trim(ret)
       end,
       show_close_icon = false,
