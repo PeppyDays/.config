@@ -12,7 +12,7 @@ return {
     npairs.add_rules({
       -- Add single quote pairing, but not enabled in Rust
       Rule("'", "'")
-        :with_pair(function(opts)
+        :with_pair(function(_)
           return vim.bo.filetype ~= "rust"
         end)
         :with_move(function(opts)

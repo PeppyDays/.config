@@ -6,6 +6,7 @@ return {
         style = "none",
       },
       modified_icon = icons.git.modified,
+      always_show_bufferline = false,
       show_close_icon = false,
       show_buffer_close_icons = false,
       left_trunc_marker = "..",

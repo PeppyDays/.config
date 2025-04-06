@@ -9,6 +9,7 @@ vim.keymap.del("n", "<leader>-")
 vim.keymap.del("n", "<leader>`")
 vim.keymap.del("n", "<leader>L")
 vim.keymap.del("n", "<leader>S")
+vim.keymap.del("n", "<leader>fn")
 
 -- move like helix
 vim.keymap.set("n", "gh", "0", { desc = "Go to line start" })
@@ -20,3 +21,6 @@ vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
 -- select all
 vim.keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
+
+-- new buffer
+vim.keymap.set("n", "<leader>bn", "<cmd>enew<cr>", { desc = "New buffer" })
