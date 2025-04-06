@@ -2,6 +2,13 @@ return {
   "folke/which-key.nvim",
   opts = {
     preset = "classic",
+    spec = {
+      {
+        { "gh", desc = "Go to line start" },
+        { "gl", desc = "Go to line end" },
+        { "gs", desc = "Go to first non-blank in line" },
+      },
+    },
     icons = {
       breadcrumb = ">",
       separator = "=",

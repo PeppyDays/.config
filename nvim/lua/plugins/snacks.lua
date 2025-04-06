@@ -10,6 +10,9 @@ return {
           dir = icons.folder.closed .. " ",
           dir_open = icons.folder.open .. " ",
         },
+        ui = {
+          live = "",
+        },
         git = icons.git,
         diagnostics = {
           Error = icons.diagnostic.error .. " ",
