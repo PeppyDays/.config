@@ -44,15 +44,6 @@ return {
         },
         lualine_x = {
           Snacks.profiler.status(),
-          LazyVim.lualine.status(icons.ai.copilot, function()
-            local clients = package.loaded["copilot"] and LazyVim.lsp.get_clients({ name = "copilot", bufnr = 0 }) or {}
-            if #clients > 0 then
-              -- FIX: Check Copilot status, after upgrade Copilot, status is not available
-              -- local status = require("copilot.api").status.data.status
-              -- return (status == "InProgress" and "pending") or (status == "Warning" and "error") or "ok"
-              return "ok"
-            end
-          end),
           {
             function()
               return require("noice").api.status.command.get()

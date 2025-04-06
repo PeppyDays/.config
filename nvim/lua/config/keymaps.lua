@@ -24,3 +24,6 @@ vim.keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
 
 -- new buffer
 vim.keymap.set("n", "<leader>bn", "<cmd>enew<cr>", { desc = "New buffer" })
+
+-- code hover
+vim.keymap.set("n", "<leader>ck", vim.lsp.buf.hover, { noremap = false, silent = true, desc = "Hover" })
