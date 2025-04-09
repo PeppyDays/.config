@@ -13,7 +13,7 @@ set -gx fish_user_paths $HOME/.cargo/bin $PATH
 set fish_greeting
 
 # default editor to wrapper of helix
-set -gx EDITOR hx
+set -gx EDITOR nvim
 
 # starship prompt configuration
 starship init fish | source
