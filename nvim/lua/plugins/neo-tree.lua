@@ -6,6 +6,12 @@ return {
   },
   opts = {
     filesystem = {
+      filtered_items = {
+        hide_dotfiles = false,
+        never_show = {
+          ".DS_Store",
+        },
+      },
       window = {
         mappings = {
           ["<cr>"] = "open_with_window_picker",
