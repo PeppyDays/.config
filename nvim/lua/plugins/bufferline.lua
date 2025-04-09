@@ -5,6 +5,7 @@ return {
       indicator = {
         style = "none",
       },
+      numbers = "buffer_id",
       modified_icon = icons.git.modified,
       always_show_bufferline = false,
       show_close_icon = false,

@@ -14,8 +14,13 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.wrap = false
 
+-- vertical line
+vim.opt.colorcolumn = "120"
+
 -- Disable snacks animation
 vim.g.snacks_animate = false
+
+vim.g.lazyvim_blink_main = true
 
 -- Modify folding characters to ascii-compatible
 vim.opt.fillchars:append({
