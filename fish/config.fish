@@ -2,10 +2,6 @@
 fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/sbin
 
-# go bin directory
-# fish_add_path ~/go/bin
-fish_add_path /opt/homebrew/opt/go@1.22/bin
-
 # rust bin directory
 set -gx fish_user_paths $HOME/.cargo/bin $PATH
 
@@ -23,6 +19,11 @@ zoxide init fish | source
 
 # fuck prompt cohnfiguration
 thefuck --alias | source
+
+# wrap brew for brewfile
+if test -f (brew --prefix)/etc/brew-wrap.fish
+    source (brew --prefix)/etc/brew-wrap.fish
+end
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
