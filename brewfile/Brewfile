@@ -1,0 +1,116 @@
+
+# tap repositories and their packages
+
+tap homebrew/core
+brew abseil
+brew awscli
+brew bat
+brew brotli
+brew buf
+brew c-ares
+brew ca-certificates
+brew certifi
+brew cffi
+brew cryptography
+brew eksctl
+brew expat
+brew eza
+brew fd
+brew fish
+brew fzf
+brew gettext
+brew gh
+brew git
+brew go
+brew go-task
+brew helix
+brew helm
+brew httpie
+brew icu4c@77
+brew jq
+brew k9s
+brew kind
+brew kubectx
+brew kubernetes-cli
+brew kustomize
+brew lazygit
+brew lf
+brew libevent
+brew libgit2
+brew libidn2
+brew libnghttp2
+brew libssh2
+brew libunistring
+brew libuv
+brew libyaml
+brew lpeg
+brew luajit
+brew luv
+brew mockery
+brew mpdecimal
+brew ncurses
+brew neovim --HEAD
+brew node
+brew oniguruma
+brew openssl@3
+brew pcre2
+brew pkgconf
+brew pkl
+brew pre-commit
+brew protobuf
+brew pycparser
+brew python@3.12
+brew python@3.13
+brew readline
+brew ripgrep
+brew sqlite
+brew starship
+brew thefuck
+brew tmux
+brew tree-sitter
+brew unibilium
+brew utf8proc
+brew wget
+brew xz
+brew yq
+brew zoxide
+
+tap homebrew/cask
+cask 1password
+cask alacritty
+cask cleanmymac
+cask datagrip
+cask docker
+cask dropbox
+cask firefox
+cask goland
+cask intellij-idea
+cask kitty
+cask logseq
+cask obsidian
+cask postman
+cask pycharm
+cask rustrover
+cask slack
+cask snagit
+cask spotify
+cask via
+cask vial
+cask zed
+
+tap bufbuild/buf
+
+tap koekeishiya/formulae
+brew skhd
+brew yabai
+
+tap nikitabobko/tap
+
+tap rcmdnk/file
+brew brew-file
+
+# App Store applications
+appstore 869223134 KakaoTalk (3.9.0)
+appstore 409183694 Keynote (14.3)
+appstore 409203825 Numbers (14.3)
+appstore 409201541 Pages (14.3)
