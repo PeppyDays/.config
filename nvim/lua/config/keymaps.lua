@@ -17,7 +17,8 @@ vim.keymap.set("n", "gl", "$", { desc = "Go to line end " })
 vim.keymap.set("n", "gs", "^", { desc = "Go to first non-blank in line" })
 
 -- exit with jk
-vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
+-- disabled because of better-escape
+-- vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
 -- select all
 vim.keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
