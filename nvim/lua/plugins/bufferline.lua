@@ -7,7 +7,7 @@ return {
       },
       numbers = "buffer_id",
       modified_icon = icons.git.modified,
-      always_show_bufferline = false,
+      always_show_bufferline = true,
       show_close_icon = false,
       show_buffer_close_icons = false,
       left_trunc_marker = "..",
