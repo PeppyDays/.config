@@ -15,7 +15,8 @@ vim.opt.smartindent = true
 vim.opt.wrap = false
 
 -- vertical line
-vim.opt.colorcolumn = "120"
+-- Disable due to virt-column.nvim
+-- vim.opt.colorcolumn = "120"
 
 -- Disable snacks animation
 vim.g.snacks_animate = false
