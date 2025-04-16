@@ -10,3 +10,17 @@
 -- Remove auto comment on new line
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+
+-- Autocommand group for filetype-specific settings
+vim.api.nvim_create_augroup("SetIndent", { clear = true })
+
+-- Set tab width to 2 for Lua, JavaScript, and TypeScript files
+vim.api.nvim_create_autocmd("FileType", {
+  group = "SetIndent",
+  pattern = { "lua", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+  callback = function()
+    vim.opt_local.tabstop = 2
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.expandtab = true
+  end,
+})
