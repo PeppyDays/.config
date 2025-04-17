@@ -6,20 +6,6 @@ return {
     },
   },
   {
-    "echasnovski/mini.surround",
-    opts = {
-      -- mappings = {
-      --   add = "ms",
-      --   delete = "md",
-      --   find = "mf",
-      --   find_left = "mF",
-      --   highlight = "mh",
-      --   replace = "mr",
-      --   update_n_lines = "mn",
-      -- },
-    },
-  },
-  {
     "echasnovski/mini.pairs",
     -- Disabled because of difficulties for disabling single quote pairing onl in Rust
     -- Switched to nvim-autopairs
