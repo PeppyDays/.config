@@ -1,0 +1,7 @@
+{
+  "test run": {
+    "prefix": "aaa",
+    "body": "\n\t// Arrange\n\t$2\n\n\t// Act\n\t$3\n\n\t// Assert\n\t$4\n",
+    "description": "Snippet for AAA"
+  }
+}
