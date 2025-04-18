@@ -3,6 +3,12 @@ return {
   opts = {
     dashboard = { enabled = false },
     explorer = { enabled = false },
+    scroll = {
+      animate = {
+        duration = { step = 15, total = 150 },
+        easing = "linear",
+      },
+    },
     picker = {
       prompt = icons.cmd.prompt .. " ",
       icons = {
@@ -33,11 +39,20 @@ return {
       configure = false,
     },
   },
-  config = function(_, opts)
-    require("snacks").setup(opts)
-
-    vim.keymap.set("n", "<leader>'", function()
-      require("snacks").picker.resume()
-    end, { desc = "Resume Picker" })
-  end,
+  keys = {
+    {
+      "<leader>'",
+      function()
+        Snacks.picker.resume()
+      end,
+      desc = "Resume picker",
+    },
+    {
+      "<leader>f.",
+      function()
+        Snacks.picker.files({ cwd = vim.fn.expand("%:p:h") })
+      end,
+      desc = "Find Config File",
+    },
+  },
 }
