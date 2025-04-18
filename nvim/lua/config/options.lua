@@ -18,9 +18,6 @@ vim.opt.wrap = false
 -- Disable due to virt-column.nvim
 -- vim.opt.colorcolumn = "120"
 
--- Disable snacks animation
-vim.g.snacks_animate = false
-
 vim.g.lazyvim_blink_main = true
 
 -- Modify folding characters to ascii-compatible
