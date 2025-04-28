@@ -41,6 +41,7 @@ set notimeout
 set commentary
 set ideajoin
 set ideamarks
+set mini-ai
 
 " which-key
 set which-key
@@ -53,10 +54,6 @@ let g:WhichKeyDesc_open_file_explorer = "<leader>e Open file explorer"
 
 "" Navigation Settings
 "" ========================================================
-
-" back and forward
-nmap <C-i> <Action>(Back)
-nmap <C-o> <Action>(Forward)
 
 " tab navigation
 nmap <S-h> <Action>(PreviousTab)
@@ -71,8 +68,14 @@ nnoremap <C-j> <C-w>j
 " jump over methods
 nmap [[ <Action>(MethodUp)
 nmap ]] <Action>(MethodDown)
-let g:WhichKeyDesc_jump_prev = "[[ Jump to previous method"
-let g:WhichKeyDesc_jump_next = "]] Jump to next method"
+let g:WhichKeyDesc_jump_prev = "[[ Go to previous method"
+let g:WhichKeyDesc_jump_next = "]] Go to next method"
+
+" jump over hunks
+nmap [h <Action>(VcsShowPreviousChangeMarker)
+nmap ]h <Action>(VcsShowNextChangeMarker)
+let g:WhichKeyDesc_jump_prev_hunk = "[h Go to previous hunk"
+let g:WhichKeyDesc_jump_next_hunk = "]h Go to next hunk"
 
 " jump around with easymotion
 " todo: check easymotion settings
@@ -99,11 +102,13 @@ nmap <leader>wv <Action>(SplitVertically)
 nmap <leader>ws <Action>(SplitHorizontally)
 nmap <leader>wd <Action>(Unsplit)
 nmap <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+nmap <leader>wz <Action>(MaximizeEditorInSplit)
 let g:WhichKeyDesc_window = "<leader>w +Window"
 let g:WhichKeyDesc_window_split_vertically = "<leader>wv Split window vertically"
 let g:WhichKeyDesc_window_split_horizontally = "<leader>ws Split window horizontally"
 let g:WhichKeyDesc_window_unsplit = "<leader>wd Delete window"
 let g:WhichKeyDesc_window_move_to_opposite_tab = "<leader>wm Move buffer to opposite window"
+let g:WhichKeyDesc_window_maximize = "<leader>wz Maximize window"
 
 "" Coding Settings
 "" ========================================================
@@ -172,7 +177,7 @@ let g:WhichKeyDesc_go_next_error = "]d Next error"
 let g:WhichKeyDesc_go_previous_error = "[d Previous error"
 
 " run and test
-nmap <leader>rm <Action>(RunMenu)
+nmap <leader>ra <Action>(RunMenu)
 nmap <leader>rn <Action>(RunClass)
 nmap <leader>rc <Action>(ContextRun)
 nmap <leader>rr <Action>(Rerun)
@@ -181,7 +186,7 @@ nmap <leader>rf <Action>(RerunFailedTests)
 nmap <leader>rs <Action>(Stop)
 nmap <leader>rC <Action>(ChooseRunConfiguration)
 let g:WhichKeyDesc_run = "<leader>r +Run"
-let g:WhichKeyDesc_run_menu = "<leader>rm Run menu"
+let g:WhichKeyDesc_run_menu = "<leader>ra Run actions"
 let g:WhichKeyDesc_run_class = "<leader>rn Run class"
 let g:WhichKeyDesc_run_context = "<leader>rc Run context"
 let g:WhichKeyDesc_run_rerun = "<leader>rr Rerun"
@@ -216,6 +221,11 @@ let g:WhichKeyDesc_debug_step_over = "<leader>do Step over"
 let g:WhichKeyDesc_debug_resume = "<leader>dr Resume"
 let g:WhichKeyDesc_debug_evaluate_expression = "<leader>dR Evaluate expression"
 let g:WhichKeyDesc_debug_activate_tool_window = "<leader>dt Activate debug tool window"
+
+" ai
+nmap <leader>aa <Action>(ActivateAIAssistantToolWindow)
+let g:WhichKeyDesc_ai = "<leader>a +AI"
+let g:WhichKeyDesc_ai_assistant = "<leader>aa Toggle AI chat"
 
 "" UI Settings
 "" ========================================================
