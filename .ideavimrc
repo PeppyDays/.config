@@ -1,0 +1,229 @@
+"" .ideavimrc - Arine
+
+"" Base Settings
+"" ========================================================
+
+" vim settings
+set scrolloff=10
+set history=1000
+set number relativenumber
+set clipboard+=unnamedplus
+
+" status bar
+set showmode
+set showcmd
+
+" search
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+nmap <silent> <Esc> :noh<CR>
+
+" jk to escape
+inoremap jk <Esc>
+
+" move lines
+map <A-k> <Action>(MoveLineUp)
+map <A-j> <Action>(MoveLineDown)
+
+" leader
+let mapleader = " "
+
+"" Plugin Settings
+"" ========================================================
+
+" plugins
+set surround
+set highlightedyank
+set easymotion
+set notimeout
+set commentary
+set ideajoin
+set ideamarks
+
+" which-key
+set which-key
+let g:WhichKeyDesc_leader = "<leader> Leader"
+
+" file explorer
+set nerdtree
+nmap <leader>e :NERDTreeToggle<CR>
+let g:WhichKeyDesc_open_file_explorer = "<leader>e Open file explorer"
+
+"" Navigation Settings
+"" ========================================================
+
+" back and forward
+nmap <C-i> <Action>(Back)
+nmap <C-o> <Action>(Forward)
+
+" tab navigation
+nmap <S-h> <Action>(PreviousTab)
+nmap <S-l> <Action>(NextTab)
+
+" pane navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-k> <C-w>k
+nnoremap <C-j> <C-w>j
+
+" jump over methods
+nmap [[ <Action>(MethodUp)
+nmap ]] <Action>(MethodDown)
+let g:WhichKeyDesc_jump_prev = "[[ Jump to previous method"
+let g:WhichKeyDesc_jump_next = "]] Jump to next method"
+
+" jump around with easymotion
+" todo: check easymotion settings
+" map <leader>j <Plug>(easymotion-prefix)
+
+" repeatable indentation
+vnoremap < <gv
+vnoremap > >gv
+
+"" Buffer, Window and Pane Settings
+"" ========================================================
+
+" buffer
+nmap <leader>bd <Action>(CloseContent)
+nmap <leader>bp <Action>(PinActiveEditorTab)
+nmap <leader>bo <Action>(CloseAllEditorsButActive)
+let g:WhichKeyDesc_buffer = "<leader>b +Buffer"
+let g:WhichKeyDesc_buffer_delete = "<leader>bd Delete buffer"
+let g:WhichKeyDesc_buffer_pin = "<leader>bp Toggle pinning buffer"
+let g:WhichKeyDesc_buffer_close_others = "<leader>bo Delete all other buffers"
+
+" window
+nmap <leader>wv <Action>(SplitVertically)
+nmap <leader>ws <Action>(SplitHorizontally)
+nmap <leader>wd <Action>(Unsplit)
+nmap <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+let g:WhichKeyDesc_window = "<leader>w +Window"
+let g:WhichKeyDesc_window_split_vertically = "<leader>wv Split window vertically"
+let g:WhichKeyDesc_window_split_horizontally = "<leader>ws Split window horizontally"
+let g:WhichKeyDesc_window_unsplit = "<leader>wd Delete window"
+let g:WhichKeyDesc_window_move_to_opposite_tab = "<leader>wm Move buffer to opposite window"
+
+"" Coding Settings
+"" ========================================================
+
+" code
+nmap <leader>ca <Action>(ShowIntentionActions)
+nmap <leader>ck <Action>(ShowHoverInfo)
+nmap <leader>cd <Action>(ShowErrorDescription)
+nmap <leader>cp <Action>(ParameterInfo)
+nmap <leader>cs <Action>(FileStructurePopup)
+nmap <leader>ch <Action>(CallHierarchy)
+nmap <leader>cg <Action>(Generate)
+nmap <leader>cl <Action>(ReformatCode)
+let g:WhichKeyDesc_code = "<leader>c +Code"
+let g:WhichKeyDesc_code_intention = "<leader>ca Code actions"
+let g:WhichKeyDesc_code_hover = "<leader>ck Show hover"
+let g:WhichKeyDesc_code_error = "<leader>cd Show error"
+let g:WhichKeyDesc_code_parameter = "<leader>cp Show parameters"
+let g:WhichKeyDesc_code_structure = "<leader>cs Show symbols"
+let g:WhichKeyDesc_code_call_hierarchy = "<leader>ch Show call hierarchy"
+let g:WhichKeyDesc_code_generate = "<leader>cg Generate"
+let g:WhichKeyDesc_code_reformat = "<leader>cl Reformat"
+
+" refactoring
+nmap <leader>cr <Action>(RenameElement)
+nmap <leader>cm <Action>(ExtractMethod)
+nmap <leader>cv <Action>(IntroduceVariable)
+nmap <leader>cf <Action>(IntroduceField)
+nmap <leader>ct <Action>(ChangeSignature)
+nmap <leader>cn <Action>(Refactorings.QuickListPopupAction)
+" let g:WhichKeyDesc_refactoring = "<leader>c +Refactoring"
+let g:WhichKeyDesc_refactoring_rename = "<leader>cr Rename"
+let g:WhichKeyDesc_refactoring_extract_method = "<leader>cm Extract method"
+let g:WhichKeyDesc_refactoring_introduce_variable = "<leader>cv Introduce variable"
+let g:WhichKeyDesc_refactoring_introduce_field = "<leader>cf Introduce field"
+let g:WhichKeyDesc_refactoring_change_signature = "<leader>ct Change signature"
+let g:WhichKeyDesc_refactoring_quick_list = "<leader>cn List quick refactorings"
+
+" find
+nmap <leader>ff <action>(GotoFile)
+nmap <leader>fr <action>(RecentFiles)
+nmap <leader>f/ <action>(FindInPath)
+nmap <leader>fl <action>(RecentLocations)
+let g:WhichKeyDesc_find = "<leader>f +Find"
+let g:WhichKeyDesc_find_file = "<leader>ff Find files"
+let g:WhichKeyDesc_find_recent_files = "<leader>fr Recent files"
+let g:WhichKeyDesc_find_find_in_path = "<leader>f/ Grep"
+let g:WhichKeyDesc_find_recent_locations = "<leader>fl Recent locations"
+
+" go to
+nmap gd <Action>(GotoDeclaration)
+nmap go <Action>(GotoSuperMethod)
+nmap gy <Action>(GotoTypeDeclaration)
+nmap gi <Action>(GotoImplementation)
+nmap gr <Action>(ShowUsages)
+nmap gt <Action>(GotoTest)
+nmap ]d <Action>(GotoNextError)
+nmap [d <Action>(GotoPreviousError)
+let g:WhichKeyDesc_go_declaration = "gd Go to declaration"
+let g:WhichKeyDesc_go_super_method = "go Go to super method"
+let g:WhichKeyDesc_go_type_declaration = "gy Go to type declaration"
+let g:WhichKeyDesc_go_implementation = "gi Go to implementation"
+let g:WhichKeyDesc_go_usages = "gr Show usages"
+let g:WhichKeyDesc_go_test = "gt Go to test"
+let g:WhichKeyDesc_go_next_error = "]d Next error"
+let g:WhichKeyDesc_go_previous_error = "[d Previous error"
+
+" run and test
+nmap <leader>rm <Action>(RunMenu)
+nmap <leader>rn <Action>(RunClass)
+nmap <leader>rc <Action>(ContextRun)
+nmap <leader>rr <Action>(Rerun)
+nmap <leader>rt <Action>(RunTests)
+nmap <leader>rf <Action>(RerunFailedTests)
+nmap <leader>rs <Action>(Stop)
+nmap <leader>rC <Action>(ChooseRunConfiguration)
+let g:WhichKeyDesc_run = "<leader>r +Run"
+let g:WhichKeyDesc_run_menu = "<leader>rm Run menu"
+let g:WhichKeyDesc_run_class = "<leader>rn Run class"
+let g:WhichKeyDesc_run_context = "<leader>rc Run context"
+let g:WhichKeyDesc_run_rerun = "<leader>rr Rerun"
+let g:WhichKeyDesc_run_tests = "<leader>rt Run tests"
+let g:WhichKeyDesc_run_rerun_failed = "<leader>rf Rerun failed tests"
+let g:WhichKeyDesc_run_stop = "<leader>rs Stop"
+let g:WhichKeyDesc_run_choose_configuration = "<leader>rC Choose run configuration"
+
+" debug
+nmap <leader>dx <Action>(Debug)
+nmap <leader>dc <Action>(ContextDebug)
+nmap <leader>dv <Action>(ViewBreakpoints)
+nmap <leader>de <Action>(EditBreakpoint)
+nmap <leader>dm <Action>(XDebugger.MuteBreakpoints)
+nmap <leader>dt <Action>(ToggleLineBreakpoint)
+nmap <leader>dC <Action>(RunToCursor)
+nmap <leader>di <Action>(StepInto)
+nmap <leader>do <Action>(StepOver)
+nmap <leader>dr <Action>(Resume)
+nmap <leader>dR <Action>(EvaluateExpression)
+nmap <leader>dt <Action>(ActivateDebugToolWindow)
+let g:WhichKeyDesc_debug = "<leader>d +Debug"
+let g:WhichKeyDesc_debug_run = "<leader>dx Debug"
+let g:WhichKeyDesc_debug_context = "<leader>dc Debug context"
+let g:WhichKeyDesc_debug_view_breakpoints = "<leader>dv View breakpoints"
+let g:WhichKeyDesc_debug_edit_breakpoint = "<leader>de Edit breakpoint"
+let g:WhichKeyDesc_debug_mute_breakpoints = "<leader>dm Mute breakpoints"
+let g:WhichKeyDesc_debug_toggle_line_breakpoint = "<leader>dt Toggle line breakpoint"
+let g:WhichKeyDesc_debug_run_to_cursor = "<leader>dC Run to cursor"
+let g:WhichKeyDesc_debug_step_into = "<leader>di Step into"
+let g:WhichKeyDesc_debug_step_over = "<leader>do Step over"
+let g:WhichKeyDesc_debug_resume = "<leader>dr Resume"
+let g:WhichKeyDesc_debug_evaluate_expression = "<leader>dR Evaluate expression"
+let g:WhichKeyDesc_debug_activate_tool_window = "<leader>dt Activate debug tool window"
+
+"" UI Settings
+"" ========================================================
+
+nmap <leader>uh <Action>(ToggleInlayHintsGloballyAction)
+nmap <leader>ui <Action>(VimFindActionIdAction)
+nmap <leader>ud <action>(ToggleDistractionFreeMode)
+let g:WhichKeyDesc_ui = "<leader>u +UI"
+let g:WhichKeyDesc_ui_toggle_inlay_hints = "<leader>uh Toggle inlay hints"
+let g:WhichKeyDesc_ui_find_action_id = "<leader>ui Toggle action id popup"
+let g:WhichKeyDesc_ui_toggle_distraction_free = "<leader>ud Toggle distraction free mode"
