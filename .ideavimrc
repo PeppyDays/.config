@@ -27,6 +27,10 @@ inoremap jk <Esc>
 map <A-k> <Action>(MoveLineUp)
 map <A-j> <Action>(MoveLineDown)
 
+" select words
+map <A-o> <Action>(EditorSelectWord)
+map <A-i> <Action>(EditorUnSelectWord)
+
 " leader
 let mapleader = " "
 
@@ -149,11 +153,15 @@ let g:WhichKeyDesc_refactoring_quick_list = "<leader>cn List quick refactorings"
 
 " find
 nmap <leader>ff <action>(GotoFile)
+nmap <leader>fd <action>(ActivateProblemsViewToolWindow)
+nmap <leader>ft <action>(ActivateTerminalToolWindow)
 nmap <leader>fr <action>(RecentFiles)
 nmap <leader>f/ <action>(FindInPath)
 nmap <leader>fl <action>(RecentLocations)
 let g:WhichKeyDesc_find = "<leader>f +Find"
 let g:WhichKeyDesc_find_file = "<leader>ff Find files"
+let g:WhichKeyDesc_find_file = "<leader>fd Problems"
+let g:WhichKeyDesc_find_file = "<leader>ft Terminal"
 let g:WhichKeyDesc_find_recent_files = "<leader>fr Recent files"
 let g:WhichKeyDesc_find_find_in_path = "<leader>f/ Grep"
 let g:WhichKeyDesc_find_recent_locations = "<leader>fl Recent locations"
