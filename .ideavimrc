@@ -56,6 +56,21 @@ set nerdtree
 nmap <leader>e :NERDTreeToggle<CR>
 let g:WhichKeyDesc_open_file_explorer = "<leader>e Open file explorer"
 
+" multiple cursors
+set multiple-cursors
+nmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-n> <Plug>NextWholeOccurrence
+nmap g<C-n> <Plug>NextOccurrence
+xmap g<C-n> <Plug>NextOccurrence
+xmap <C-x> <Plug>SkipOccurrence
+xmap <C-p> <Plug>RemoveOccurrence
+
+" argument text object
+" todo: how to use it..?
+" set argtextobj
+" nmap ]a <Plug>(textobj-argument-next)
+" nmap [a <Plug>(textobj-argument-prev)
+
 "" Navigation Settings
 "" ========================================================
 
@@ -70,10 +85,10 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-j> <C-w>j
 
 " jump over methods
-nmap [[ <Action>(MethodUp)
-nmap ]] <Action>(MethodDown)
-let g:WhichKeyDesc_jump_prev = "[[ Go to previous method"
-let g:WhichKeyDesc_jump_next = "]] Go to next method"
+nmap [f <Action>(MethodUp)
+nmap ]f <Action>(MethodDown)
+let g:WhichKeyDesc_jump_prev = "[f Go to previous method"
+let g:WhichKeyDesc_jump_next = "]f Go to next method"
 
 " jump over hunks
 nmap [h <Action>(VcsShowPreviousChangeMarker)
