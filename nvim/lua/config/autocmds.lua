@@ -14,10 +14,10 @@ vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 -- Autocommand group for filetype-specific settings
 vim.api.nvim_create_augroup("SetIndent", { clear = true })
 
--- Set tab width to 2 for Lua, JavaScript, and TypeScript files
+-- Set tab width to 2 for Yaml, Json, Markdown, Lua, JavaScript, and TypeScript files
 vim.api.nvim_create_autocmd("FileType", {
   group = "SetIndent",
-  pattern = { "lua", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+  pattern = { "yaml", "json", "markdown", "lua", "javascript", "typescript", "javascriptreact", "typescriptreact" },
   callback = function()
     vim.opt_local.tabstop = 2
     vim.opt_local.shiftwidth = 2
