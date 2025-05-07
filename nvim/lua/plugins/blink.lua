@@ -4,6 +4,7 @@ return {
     "mikavilpas/blink-ripgrep.nvim",
     "xzbdmw/colorful-menu.nvim",
   },
+  version = "1.*",
   opts = {
     sources = {
       default = {
