@@ -52,4 +52,11 @@ return {
       },
     },
   },
+  config = function(_, _)
+    require("neotest").setup({
+      adapters = {
+        require("rustaceanvim.neotest"),
+      },
+    })
+  end,
 }
