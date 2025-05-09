@@ -28,14 +28,17 @@ return {
       unknown = "U",
       non_collapsible = "─",
       collapsed = "─",
-      expanded = "╮",
+      expanded = "┐",
       child_prefix = "├",
-      final_child_prefix = "╰",
+      final_child_prefix = "└",
       child_indent = "│",
       final_child_indent = " ",
       watching = "W",
       test = "T",
       notify = "N",
+    }
+    opts.adapters = {
+      require("rustaceanvim.neotest"),
     }
     require("neotest").setup(opts)
   end,
