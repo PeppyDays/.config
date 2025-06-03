@@ -36,7 +36,7 @@ abbr -a !! --position anywhere --function last_history_item
 # rust
 abbr --add cb cargo build
 abbr --add cr cargo run
-abbr --add ct cargo test
+abbr --add ct cargo nextest run
 
 # yabai and skhd
 abbr --add ystop "yabai --stop-service; skhd --stop-service;"

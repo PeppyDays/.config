@@ -151,6 +151,11 @@ let g:WhichKeyDesc_code_call_hierarchy = "<leader>ch Show call hierarchy"
 let g:WhichKeyDesc_code_generate = "<leader>cg Generate"
 let g:WhichKeyDesc_code_reformat = "<leader>cl Reformat"
 
+"git
+nmap <leader>gg <Action>(TUILauncher.LazyGit)
+let g:WhichKeyDesc_git = "<leader>g +Git"
+let g:WhichKeyDesc_git_lazygit = "<leader>gg Launch LazyGit"
+
 " refactoring
 nmap <leader>cr <Action>(RenameElement)
 nmap <leader>cm <Action>(ExtractMethod)

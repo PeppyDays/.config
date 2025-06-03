@@ -15,6 +15,11 @@ return {
             },
             prefix = "crate",
           },
+          procMacro = {
+            ignored = {
+              ["async-trait"] = vim.NIL,
+            },
+          },
         },
       },
     },

@@ -24,3 +24,13 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.expandtab = true
   end,
 })
+
+-- Disable single quote paring in Rust
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "lua",
+  group = vim.api.nvim_create_augroup("Rust_disable_single_quote", { clear = true }),
+  callback = function()
+    MiniPairs.unmap("i", "'", "''")
+  end,
+  desc = "Disable single quote Rust",
+})

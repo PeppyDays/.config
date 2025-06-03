@@ -22,9 +22,6 @@ vim.keymap.set("n", "gs", "^", { desc = "Go to first non-blank in line" })
 -- disabled because of better-escape
 -- vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
--- select all
-vim.keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
-
 -- new buffer
 vim.keymap.set("n", "<leader>bn", "<cmd>enew<cr>", { desc = "New buffer" })
 
