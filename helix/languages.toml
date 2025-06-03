@@ -1,3 +1,31 @@
+[language-server.rust-analyzer.config]
+imports = { preferPrelude = true, granularity = { group = "item", enforce = true }, prefix = "crate" }
+check = { command = "clippy" }
+
+[language-server.rust-analyzer.rustfmt]
+extraArgs = ["+nightly"]
+
+[language-server.pylsp.config.plugins]
+pyflakes = {enabled = false}
+mccabe = {enabled = false}
+pyls_isort = {enabled = false}
+pycodestyle = {enabled = false, maxLineLength = 88}
+pydocstyle = {enabled = false}
+autopep8 = {enabled = false}
+yapf = {enabled = false}
+flake8 = {enabled = false}
+pylint = {enabled = false}
+ruff = {enabled = true, extendSelect = ["I"]}
+mypy = {enabled = true, live_mode = true, strict = true}
+
+[language-server.gopls]
+command = "gopls"
+config = { "gofumpt" = true, "local" = "goimports", "semanticTokens" = true, "staticcheck" = true, "verboseOutput" = true, "analyses" = { "fieldalignment" = true, "nilness" = true, unusedparams = true, unusedwrite = true, useany = true }, usePlaceholders = true, completeUnimported = true, hints = { "assignVariableType" = true, "compositeLiteralFields" = true, "compositeLiteralTypes" = true, "constantValues" = true, "functionTypeParameters" = true, "parameterNames" = true, "rangeVariableTypes" = true } }
+
+# refer to https://github.com/estin/simple-completion-language-server
+[language-server.scls]
+command = "simple-completion-language-server"
+
 [[language]]
 name = "json"
 formatter = { command = "prettier", args = ["--parser", "json", "--tab-with", "2"] }
@@ -22,29 +50,10 @@ name = "python"
 auto-format = true
 formatter = { command = "black", args = ["--quiet", "-"] }
 
-[language-server.pylsp.config.plugins]
-pyflakes = {enabled = false}
-mccabe = {enabled = false}
-pyls_isort = {enabled = false}
-pycodestyle = {enabled = false, maxLineLength = 88}
-pydocstyle = {enabled = false}
-autopep8 = {enabled = false}
-yapf = {enabled = false}
-flake8 = {enabled = false}
-pylint = {enabled = false}
-ruff = {enabled = true, extendSelect = ["I"]}
-mypy = {enabled = true, live_mode = true, strict = true}
-
 [[language]]
 name = "rust"
+language-servers = [ "scls", "rust-analyzer" ]
 auto-format = true
-
-[language-server.rust-analyzer.config]
-imports = { preferPrelude = true, granularity = { group = "item", enforce = true }, prefix = "crate" }
-check = { command = "clippy" }
-
-[language-server.rust-analyzer.rustfmt]
-extraArgs = ["+nightly"]
 
 [[language]]
 name = "hcl"
@@ -61,6 +70,3 @@ name = "go"
 auto-format = true
 formatter = { command = "goimports" }
 
-[language-server.gopls]
-command = "gopls"
-config = { "gofumpt" = true, "local" = "goimports", "semanticTokens" = true, "staticcheck" = true, "verboseOutput" = true, "analyses" = { "fieldalignment" = true, "nilness" = true, unusedparams = true, unusedwrite = true, useany = true }, usePlaceholders = true, completeUnimported = true, hints = { "assignVariableType" = true, "compositeLiteralFields" = true, "compositeLiteralTypes" = true, "constantValues" = true, "functionTypeParameters" = true, "parameterNames" = true, "rangeVariableTypes" = true } }

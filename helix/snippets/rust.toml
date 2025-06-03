@@ -1,0 +1,5 @@
+[[snippets]]
+prefix = "aaa"
+scope = ["rust"]
+body = "// Arrange\n$1\n// Act\n\n// Assert"
+description = "arrange, act and assert"
