@@ -27,6 +27,9 @@ abbr --add tm tmux
 abbr --add tma tmux attach
 abbr --add tmd tmux detach
 
+# task master
+abbr --add ta task-master
+
 # !!
 function last_history_item
     echo $history[1]
