@@ -27,6 +27,9 @@ abbr --add tm tmux
 abbr --add tma tmux attach
 abbr --add tmd tmux detach
 
+# claude code
+abbr --add cl claude
+
 # task master
 abbr --add ta task-master
 
