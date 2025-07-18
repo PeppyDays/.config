@@ -4,11 +4,12 @@ theme = "catppuccin_frappe_modified"
 line-number = "relative"
 cursorline = true
 undercurl = true
-bufferline = "always"
+bufferline = "never"
 mouse = false
 color-modes = true
 continue-comments = false
-end-of-line-diagnostics = "hint"
+trim-final-newlines = true
+trim-trailing-whitespace = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -35,9 +36,6 @@ mode.select = "SELECT"
 
 [editor.auto-save]
 after-delay.enable = true
-
-[editor.inline-diagnostics]
-cursor-line = "info"
 
 [keys.normal]
 # extend lines above
@@ -131,4 +129,3 @@ b = ":echo %sh{git blame -L %{cursor_line},+1 %{buffer_name}}"
 j = { k = "normal_mode" }
 C-p = "kill_to_line_end"
 A-ret = ["normal_mode", "open_below"]
-
