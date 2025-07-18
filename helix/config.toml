@@ -52,7 +52,7 @@ ret = ["open_below", "normal_mode"]
 q = ":write-quit-all!"
 # disable keys
 F = "no_op"
-g = "no_op"
+# g = "no_op"
 s = "no_op"
 S = "no_op"
 d = "no_op"
@@ -122,6 +122,10 @@ f = ":format"
 w = ":toggle whitespace.render all none"
 h = ":toggle lsp.display-inlay-hints"
 b = ":toggle bufferline always never"
+
+# git keys
+[keys.normal.space.g]
+b = ":echo %sh{git blame -L %{cursor_line},+1 %{buffer_name}}"
 
 [keys.insert]
 j = { k = "normal_mode" }
