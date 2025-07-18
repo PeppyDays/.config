@@ -54,4 +54,5 @@ yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Exosphere$" manage=off
 yabai -m rule --add app="^Snagit$" manage=off
 yabai -m rule --add app="^KensingtonWorks2$" manage=off
+yabai -m rule --add app="^FortiClient$" manage=off
 
