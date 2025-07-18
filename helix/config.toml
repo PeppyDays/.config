@@ -124,6 +124,7 @@ b = ":toggle bufferline always never"
 # git keys
 [keys.normal.space.g]
 b = ":echo %sh{git blame -L %{cursor_line},+1 %{buffer_name}}"
+g = ":sh tmux popup -d \"#{pane_current_path}\" -xC -yC -w80%% -h80%% -E lazygit"
 
 [keys.insert]
 j = { k = "normal_mode" }
