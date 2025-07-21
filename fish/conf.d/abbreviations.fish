@@ -29,7 +29,9 @@ abbr --add tmd tmux detach
 
 # claude code
 abbr --add cl claude
-abbr --add cls claude-squad
+
+# gemini cli
+abbr --add gm gemini
 
 # task master
 abbr --add ta task-master
