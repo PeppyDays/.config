@@ -27,6 +27,9 @@ abbr --add tm tmux
 abbr --add tma tmux attach
 abbr --add tmd tmux detach
 
+# zellij
+abbr --add zj zellij
+
 # claude code
 abbr --add cl claude
 

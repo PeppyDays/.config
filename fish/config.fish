@@ -5,6 +5,9 @@ fish_add_path /opt/homebrew/sbin
 # rust bin directory
 set -gx fish_user_paths $HOME/.cargo/bin $PATH
 
+# llvm bin directory
+fish_add_path /opt/homebrew/opt/llvm/bin
+
 # greeting message
 set fish_greeting
 
