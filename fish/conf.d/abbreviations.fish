@@ -29,6 +29,8 @@ abbr --add tmd tmux detach
 
 # zellij
 abbr --add zj zellij
+abbr --add zjr zellij run
+abbr --add zjrf zellij run --floating
 
 # claude code
 abbr --add cl claude
