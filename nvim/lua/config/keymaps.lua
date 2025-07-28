@@ -17,6 +17,7 @@ vim.keymap.del("n", "<leader>uZ")
 vim.keymap.set("n", "gh", "0", { desc = "Go to line start" })
 vim.keymap.set("n", "gl", "$", { desc = "Go to line end " })
 vim.keymap.set("n", "gs", "^", { desc = "Go to first non-blank in line" })
+vim.keymap.set("n", "ge", "G", { desc = "Go to the end of the file" })
 
 -- exit with jk
 -- disabled because of better-escape
