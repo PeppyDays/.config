@@ -49,9 +49,9 @@ ret = ["open_below", "normal_mode"]
 
 [keys.normal.space]
 q = ":write-quit-all!"
+space = "buffer_picker"
 # disable keys
 F = "no_op"
-# g = "no_op"
 s = "no_op"
 S = "no_op"
 d = "no_op"
