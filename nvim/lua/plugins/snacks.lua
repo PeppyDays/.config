@@ -54,5 +54,12 @@ return {
       end,
       desc = "Find Config File",
     },
+    {
+      "<leader><space>",
+      function()
+        Snacks.picker.buffers()
+      end,
+      desc = "Buffers",
+    },
   },
 }
