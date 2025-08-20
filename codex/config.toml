@@ -1,0 +1,3 @@
+model = "gpt-5"
+model_reasoning_effort = "high"
+projects = { "/Users/arine/.config" = { trust_level = "trusted" } }
