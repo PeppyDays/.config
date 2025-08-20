@@ -5,6 +5,9 @@ fish_add_path /opt/homebrew/sbin
 # rust bin directory
 set -gx fish_user_paths $HOME/.cargo/bin $PATH
 
+# codex cli config directory
+set -gx CODEX_HOME $HOME/.config/codex
+
 # llvm bin directory
 fish_add_path /opt/homebrew/opt/llvm/bin
 
