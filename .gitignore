@@ -14,3 +14,10 @@ zed/embeddings
 zed/prompts
 zed/.*
 __pycache__/
+codex/log
+codex/sessions/2025/08/19
+codex/auth.json
+codex/history.jsonl
+codex/version.json
+configstore/update-notifier-@google
+configstore/update-notifier-@google
