@@ -8,12 +8,11 @@
 // from the command palette or from `Zed` application menu.
 {
   "wrap_guides": [80, 120],
-  "assistant": {
+  "agent": {
     "default_model": {
       "provider": "copilot_chat",
       "model": "claude-3-7-sonnet"
-    },
-    "version": "2"
+    }
   },
   // "base_keymap": "JetBrains",
   "theme": "Catppuccin Frappé",
@@ -27,7 +26,7 @@
   "relative_line_numbers": true,
   "vim_mode": true,
   "vim": {
-    "default_mode": "normal",
+    "default_mode": "helix_normal",
     "use_multiline_find": true,
     "use_smartcase_find": true
   },
