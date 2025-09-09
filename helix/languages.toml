@@ -5,18 +5,19 @@ check = { command = "clippy" }
 [language-server.rust-analyzer.rustfmt]
 extraArgs = ["+nightly"]
 
-[language-server.pylsp.config.plugins]
-pyflakes = {enabled = false}
-mccabe = {enabled = false}
-pyls_isort = {enabled = false}
-pycodestyle = {enabled = false, maxLineLength = 88}
-pydocstyle = {enabled = false}
-autopep8 = {enabled = false}
-yapf = {enabled = false}
-flake8 = {enabled = false}
-pylint = {enabled = false}
-ruff = {enabled = true, extendSelect = ["I"]}
-mypy = {enabled = true, live_mode = true, strict = true}
+[language-server.pyright.config]
+python.analysis.venvPath = "."
+python.analysis.venv = ".venv"
+python.analysis.lint = true
+python.analysis.inlayHint.enable = true
+python.analysis.autoSearchPaths = true
+python.analysis.diagnosticMode = "workspace"
+python.analysis.useLibraryCodeForType = true
+python.analysis.logLevel = "Error"
+# python.analysis.typeCheckingMode = "off"
+python.analysis.autoImoprtCompletion = true
+python.analysis.reportOptionalSubscript = false
+python.analysis.reportOptionalMemberAccess = false
 
 [language-server.gopls]
 command = "gopls"
@@ -48,7 +49,7 @@ formatter = { command = "fish_indent" }
 [[language]]
 name = "python"
 auto-format = true
-formatter = { command = "black", args = ["--quiet", "-"] }
+formatter = { command = "ruff", args = ["format", "-"] }
 
 [[language]]
 name = "rust"
@@ -69,4 +70,3 @@ formatter = { command = "terraform", args = ["fmt", "-"] }
 name = "go"
 auto-format = true
 formatter = { command = "goimports" }
-
