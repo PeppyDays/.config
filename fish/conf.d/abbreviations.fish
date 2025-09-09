@@ -38,8 +38,9 @@ abbr --add cl claude
 # gemini cli
 abbr --add gm gemini
 
-# task master
-abbr --add ta task-master
+# python venv activation
+abbr --add ae source .venv/bin/activate.fish
+abbr --add de deactivate
 
 # !!
 function last_history_item
