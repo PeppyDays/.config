@@ -2,6 +2,29 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
+      capabilities = {
+        textDocument = {
+          codeAction = {
+            dynamicRegistration = true,
+            isPreferredSupport = true,
+            codeActionLiteralSupport = {
+              codeActionKind = {
+                valueSet = {
+                  "",
+                  "quickfix",
+                  "refactor",
+                  "refactor.extract",
+                  "refactor.inline",
+                  "refactor.rewrite",
+                  "source",
+                  "source.organizeImports",
+                  "source.fixAll",
+                },
+              },
+            },
+          },
+        },
+      },
       codelens = {
         enabled = true,
       },
@@ -11,6 +34,19 @@ return {
         },
       },
       servers = {
+        basedpyright = {
+          settings = {
+            basedpyright = {
+              analysis = {
+                autoImportCompletions = true,
+                autoSearchPaths = true,
+                typeCheckingMode = "standard",
+                useLibraryCodeForTypes = true,
+                diagnosticMode = "workspace",
+              },
+            },
+          },
+        },
         -- rust-analyzer's configuration is set in rustaceanvim.lua
         -- If not using rustaceanvim anymore, set it here again
         -- rust_analyzer = {
