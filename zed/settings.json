@@ -7,11 +7,11 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "wrap_guides": [80, 120],
+  "wrap_guides": [120],
   "agent": {
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-3-7-sonnet"
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-latest"
     }
   },
   // "base_keymap": "JetBrains",
@@ -60,6 +60,15 @@
       },
       "rustfmt": {
         "extraArgs": ["+nightly"]
+      }
+    },
+    "basedpyright": {
+      "settings": {
+        "basedpyright.analysis.typeCheckingMode": "standard",
+        "basedpyright.analysis.autoImportCompletions": true,
+        "basedpyright.analysis.autoSearchPaths": true,
+        "basedpyright.analysis.diagnosticMode": "workspace",
+        "basedpyright.analysis.useLibraryCodeForTypes": true
       }
     }
   }

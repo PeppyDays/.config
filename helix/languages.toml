@@ -11,10 +11,10 @@ python.analysis.venv = ".venv"
 python.analysis.lint = true
 python.analysis.inlayHint.enable = true
 python.analysis.autoSearchPaths = true
+python.analysis.autoImportCompletions = true
 python.analysis.diagnosticMode = "workspace"
+python.analysis.typeCheckingMode = "standard"
 python.analysis.useLibraryCodeForType = true
-python.analysis.logLevel = "Error"
-# python.analysis.typeCheckingMode = "off"
 python.analysis.autoImoprtCompletion = true
 python.analysis.reportOptionalSubscript = false
 python.analysis.reportOptionalMemberAccess = false
@@ -29,17 +29,32 @@ command = "simple-completion-language-server"
 
 [[language]]
 name = "json"
-formatter = { command = "prettier", args = ["--parser", "json", "--tab-with", "2"] }
+formatter = { command = "prettier", args = [
+    "--parser",
+    "json",
+    "--tab-with",
+    "2",
+] }
 
 [[language]]
 name = "yaml"
 auto-format = true
-formatter = { command = "prettier", args = ["--parser", "yaml", "--tab-width", "2"] }
+formatter = { command = "prettier", args = [
+    "--parser",
+    "yaml",
+    "--tab-width",
+    "2",
+] }
 
 [[language]]
 name = "toml"
 auto-format = true
-formatter = { command = "prettier", args = ["--parser", "toml", "--tab-width", "2"] }
+formatter = { command = "prettier", args = [
+    "--parser",
+    "toml",
+    "--tab-width",
+    "2",
+] }
 
 [[language]]
 name = "fish"
@@ -53,7 +68,7 @@ formatter = { command = "ruff", args = ["format", "-"] }
 
 [[language]]
 name = "rust"
-language-servers = [ "scls", "rust-analyzer" ]
+language-servers = ["scls", "rust-analyzer"]
 auto-format = true
 
 [[language]]
