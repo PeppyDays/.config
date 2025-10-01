@@ -1,31 +1,20 @@
 [[language]]
 name = "json"
-formatter = { command = "prettier", args = [
-    "--parser",
-    "json",
-    "--tab-with",
-    "2",
-] }
+# formatter = { command = "prettier", args = [
+#   "--parser",
+#   "json",
+#   "--tab-with",
+#   "2",
+# ] }
 
 [[language]]
 name = "yaml"
 auto-format = true
-formatter = { command = "prettier", args = [
-    "--parser",
-    "yaml",
-    "--tab-width",
-    "2",
-] }
 
 [[language]]
 name = "toml"
 auto-format = true
-formatter = { command = "prettier", args = [
-    "--parser",
-    "toml",
-    "--tab-width",
-    "2",
-] }
+indent = { tab-width = 2, unit = " " }
 
 [[language]]
 name = "fish"
@@ -36,7 +25,8 @@ formatter = { command = "fish_indent" }
 name = "python"
 language-servers = ["basedpyright", "ruff"]
 auto-format = true
-formatter = { command = "bash", args = ["-c", "ruff check --fix - | ruff format -"] }
+formatter = { command = "ruff", args = ["format", "-"] }
+# formatter = { command = "bash", args = ["-c", "ruff check --fix - | ruff format -"] }
 
 [language-server.basedpyright]
 command = "basedpyright-langserver"
