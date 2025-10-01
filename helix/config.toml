@@ -25,6 +25,7 @@ hidden = false
 
 [editor.lsp]
 display-messages = true
+display-progress-messages = true
 display-inlay-hints = true
 
 [editor.statusline]
@@ -40,10 +41,15 @@ after-delay.enable = true
 
 [keys.normal]
 # extend lines above
-# X = "extend_line_above"
+X = "extend_line_above"
+# jump windows
+C-h = "jump_view_left"
+C-j = "jump_view_down"
+C-k = "jump_view_up"
+C-l = "jump_view_right"
 # move lines up/down
-A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
-A-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+A-S-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+A-S-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 # enter works in normal mode
 ret = ["open_below", "normal_mode"]
 
