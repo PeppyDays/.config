@@ -1,15 +1,12 @@
 [[language]]
 name = "json"
-# formatter = { command = "prettier", args = [
-#   "--parser",
-#   "json",
-#   "--tab-with",
-#   "2",
-# ] }
+auto-format = true
+indent = { tab-width = 2, unit = " " }
 
 [[language]]
 name = "yaml"
 auto-format = true
+indent = { tab-width = 2, unit = " " }
 
 [[language]]
 name = "toml"
@@ -25,7 +22,6 @@ formatter = { command = "fish_indent" }
 name = "python"
 language-servers = ["basedpyright", "ruff"]
 auto-format = true
-# formatter = { command = "ruff", args = ["format", "-"] }
 formatter = { command = "bash", args = [
   "-c",
   "ruff check --fix - | ruff format -",
@@ -50,8 +46,7 @@ reportOptionalMemberAccess = false
 
 [language-server.ruff]
 command = "ruff"
-args = ["server", "--preview"]
-# args = ["server"]
+args = ["server"]
 
 [[language]]
 name = "rust"
