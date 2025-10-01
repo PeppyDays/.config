@@ -1,32 +1,3 @@
-[language-server.rust-analyzer.config]
-imports = { preferPrelude = true, granularity = { group = "item", enforce = true }, prefix = "crate" }
-check = { command = "clippy" }
-
-[language-server.rust-analyzer.rustfmt]
-extraArgs = ["+nightly"]
-
-[language-server.pyright.config]
-python.analysis.venvPath = "."
-python.analysis.venv = ".venv"
-python.analysis.lint = true
-python.analysis.inlayHint.enable = true
-python.analysis.autoSearchPaths = true
-python.analysis.autoImportCompletions = true
-python.analysis.diagnosticMode = "workspace"
-python.analysis.typeCheckingMode = "standard"
-python.analysis.useLibraryCodeForType = true
-python.analysis.autoImoprtCompletion = true
-python.analysis.reportOptionalSubscript = false
-python.analysis.reportOptionalMemberAccess = false
-
-[language-server.gopls]
-command = "gopls"
-config = { "gofumpt" = true, "local" = "goimports", "semanticTokens" = true, "staticcheck" = true, "verboseOutput" = true, usePlaceholders = true, completeUnimported = true, hints = { "assignVariableType" = true, "compositeLiteralFields" = true, "compositeLiteralTypes" = true, "constantValues" = true, "functionTypeParameters" = true, "parameterNames" = true, "rangeVariableTypes" = true } }
-
-# refer to https://github.com/estin/simple-completion-language-server
-[language-server.scls]
-command = "simple-completion-language-server"
-
 [[language]]
 name = "json"
 formatter = { command = "prettier", args = [
@@ -63,13 +34,42 @@ formatter = { command = "fish_indent" }
 
 [[language]]
 name = "python"
+language-servers = ["basedpyright", "ruff"]
 auto-format = true
-formatter = { command = "ruff", args = ["format", "-"] }
+formatter = { command = "bash", args = ["-c", "ruff check --fix - | ruff format -"] }
+
+[language-server.basedpyright]
+command = "basedpyright-langserver"
+args = ["--stdio"]
+
+[language-server.basedpyright.config.basedpyright.analysis]
+venvPath = "."
+venv = ".venv"
+lint = true
+inlayHint.enable = true
+authSearchPaths = true
+autoImportCompletions = true
+diagnosticMode = "workspace"
+typeCheckingMode = "basic"
+useLibraryCodeForType = true
+reportOptionalSubscript = false
+reportOptionalMemberAccess = false
+
+[language-server.ruff]
+command = "ruff"
+args = ["server", "--preview"]
 
 [[language]]
 name = "rust"
 language-servers = ["scls", "rust-analyzer"]
 auto-format = true
+
+[language-server.rust-analyzer.config]
+imports = { preferPrelude = true, granularity = { group = "item", enforce = true }, prefix = "crate" }
+check = { command = "clippy" }
+
+[language-server.rust-analyzer.rustfmt]
+extraArgs = ["+nightly"]
 
 [[language]]
 name = "hcl"
@@ -85,3 +85,11 @@ formatter = { command = "terraform", args = ["fmt", "-"] }
 name = "go"
 auto-format = true
 formatter = { command = "goimports" }
+
+[language-server.gopls]
+command = "gopls"
+config = { "gofumpt" = true, "local" = "goimports", "semanticTokens" = true, "staticcheck" = true, "verboseOutput" = true, usePlaceholders = true, completeUnimported = true, hints = { "assignVariableType" = true, "compositeLiteralFields" = true, "compositeLiteralTypes" = true, "constantValues" = true, "functionTypeParameters" = true, "parameterNames" = true, "rangeVariableTypes" = true } }
+
+# refer to https://github.com/estin/simple-completion-language-server
+[language-server.scls]
+command = "simple-completion-language-server"
