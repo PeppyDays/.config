@@ -25,8 +25,11 @@ formatter = { command = "fish_indent" }
 name = "python"
 language-servers = ["basedpyright", "ruff"]
 auto-format = true
-formatter = { command = "ruff", args = ["format", "-"] }
-# formatter = { command = "bash", args = ["-c", "ruff check --fix - | ruff format -"] }
+# formatter = { command = "ruff", args = ["format", "-"] }
+formatter = { command = "bash", args = [
+  "-c",
+  "ruff check --fix - | ruff format -",
+] }
 
 [language-server.basedpyright]
 command = "basedpyright-langserver"
@@ -48,6 +51,7 @@ reportOptionalMemberAccess = false
 [language-server.ruff]
 command = "ruff"
 args = ["server", "--preview"]
+# args = ["server"]
 
 [[language]]
 name = "rust"

@@ -31,7 +31,14 @@ display-inlay-hints = true
 [editor.statusline]
 left = ["mode", "spinner", "version-control"]
 center = ["file-modification-indicator", "file-name", "read-only-indicator"]
-right = ["position", "total-line-numbers", "register", "diagnostics", "file-encoding", "file-type"]
+right = [
+  "position",
+  "total-line-numbers",
+  "register",
+  "diagnostics",
+  "file-encoding",
+  "file-type",
+]
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
@@ -49,7 +56,12 @@ C-k = "jump_view_up"
 C-l = "jump_view_right"
 # move lines up/down
 A-S-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
-A-S-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+A-S-k = [
+  "extend_to_line_bounds",
+  "delete_selection",
+  "move_line_up",
+  "paste_before",
+]
 # enter works in normal mode
 ret = ["open_below", "normal_mode"]
 
@@ -78,10 +90,11 @@ E = "no_op"
 [keys.normal.space.f]
 b = "buffer_picker"
 e = "file_explorer"
-E = "file_explorer_in_current_buffer_directory"
-"." = "file_explorer_in_current_directory"
+E = "file_explorer_in_current_directory"
+"." = "file_explorer_in_current_buffer_directory"
 f = "file_picker"
 F = "file_picker_in_current_directory"
+"," = "file_picker_in_current_buffer_directory"
 g = "changed_file_picker"
 "/" = "global_search"
 
