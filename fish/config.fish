@@ -15,7 +15,7 @@ fish_add_path /opt/homebrew/opt/llvm/bin
 set fish_greeting
 
 # default editor to wrapper of helix
-set -gx EDITOR nvim
+set -gx EDITOR hx
 
 # starship prompt configuration
 starship init fish | source
