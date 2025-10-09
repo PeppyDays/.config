@@ -2,17 +2,18 @@
 # tap repositories and their packages
 
 tap homebrew/core
-brew abseil
 brew awscli
+brew basedpyright
 brew bat
+brew broot
 brew brotli
 brew buf
 brew c-ares
 brew ca-certificates
 brew certifi
-brew cffi
-brew cryptography
-brew eksctl
+brew cmake
+brew codex
+brew dotnet@8
 brew expat
 brew eza
 brew fd
@@ -23,13 +24,16 @@ brew gh
 brew git
 brew go
 brew go-task
+brew golangci-lint
 brew helix
 brew helm
 brew httpie
 brew icu4c@77
+brew jenv
 brew jq
 brew k9s
 brew kind
+brew krb5
 brew kubectx
 brew kubernetes-cli
 brew kustomize
@@ -39,14 +43,24 @@ brew libevent
 brew libgit2
 brew libidn2
 brew libnghttp2
+brew libnghttp3
+brew libngtcp2
+brew libpq
 brew libssh2
 brew libunistring
 brew libuv
+brew libxau
+brew libxcb
+brew libxdmcp
 brew libyaml
+brew llvm
 brew lpeg
 brew luajit
 brew luv
-brew mockery
+brew lz4
+brew markdown-oxide
+brew marksman
+brew mdbook
 brew mpdecimal
 brew ncurses
 brew neovim --HEAD
@@ -54,31 +68,42 @@ brew node
 brew oniguruma
 brew openssl@3
 brew pcre2
+brew pipx
 brew pkgconf
 brew pkl
 brew pre-commit
-brew protobuf
-brew pycparser
-brew python@3.12
+brew prettier
+brew python-lsp-server
 brew python@3.13
 brew readline
 brew ripgrep
+brew ruff
+brew simdjson
 brew sqlite
 brew starship
-brew thefuck
+brew taplo
 brew tmux
 brew tree-sitter
 brew unibilium
 brew utf8proc
+brew uv
+brew uvwasi
 brew wget
+brew xorgproto
 brew xz
+brew yaml-language-server
+brew yazi
 brew yq
+brew z3
+brew zellij
+brew zk
 brew zoxide
+brew zstd
 
 tap homebrew/cask
 cask 1password
 cask alacritty
-cask cleanmymac
+cask chatgpt
 cask datagrip
 cask docker
 cask dropbox
@@ -87,15 +112,12 @@ cask goland
 cask intellij-idea
 cask kitty
 cask logseq
-cask obsidian
 cask postman
 cask pycharm
 cask rustrover
 cask slack
-cask snagit
 cask spotify
 cask via
-cask vial
 cask zed
 
 tap bufbuild/buf
@@ -110,7 +132,7 @@ tap rcmdnk/file
 brew brew-file
 
 # App Store applications
-appstore 869223134 KakaoTalk (3.9.0)
-appstore 409183694 Keynote (14.3)
-appstore 409203825 Numbers (14.3)
-appstore 409201541 Pages (14.3)
+appstore 869223134 KakaoTalk (25.7.1)
+appstore 409183694 Keynote (14.4)
+appstore 409203825 Numbers (14.4)
+appstore 409201541 Pages (14.4)

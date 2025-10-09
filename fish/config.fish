@@ -2,6 +2,9 @@
 fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/sbin
 
+# llvm bin directory
+fish_add_path /opt/homebrew/opt/llvm/bin
+
 # rust bin directory
 set -gx fish_user_paths $HOME/.cargo/bin $PATH
 
@@ -22,9 +25,6 @@ starship init fish | source
 
 # zoxide prompt configuration
 zoxide init fish | source
-
-# fuck prompt cohnfiguration
-thefuck --alias | source
 
 # wrap brew for brewfile
 if test -f (brew --prefix)/etc/brew-wrap.fish
