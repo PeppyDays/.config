@@ -1,4 +1,9 @@
 [[language]]
+name = "markdown"
+auto-format = true
+soft-wrap = { enable = true }
+
+[[language]]
 name = "json"
 auto-format = true
 indent = { tab-width = 2, unit = " " }
