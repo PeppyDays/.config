@@ -12,7 +12,6 @@ brew c-ares
 brew ca-certificates
 brew certifi
 brew cmake
-brew codex
 brew dotnet@8
 brew expat
 brew eza
@@ -24,6 +23,7 @@ brew gh
 brew git
 brew go
 brew go-task
+brew golang-migrate
 brew golangci-lint
 brew helix
 brew helm
@@ -75,6 +75,7 @@ brew pre-commit
 brew prettier
 brew python-lsp-server
 brew python@3.13
+brew python@3.14
 brew readline
 brew ripgrep
 brew ruff
@@ -88,6 +89,7 @@ brew unibilium
 brew utf8proc
 brew uv
 brew uvwasi
+brew vscode-langservers-extracted
 brew wget
 brew xorgproto
 brew xz
@@ -112,6 +114,7 @@ cask goland
 cask intellij-idea
 cask kitty
 cask logseq
+cask notion
 cask postman
 cask pycharm
 cask rustrover
@@ -131,8 +134,10 @@ tap nikitabobko/tap
 tap rcmdnk/file
 brew brew-file
 
+# Other Homebrew packages
+brew codex
+
 # App Store applications
-appstore 869223134 KakaoTalk (25.7.1)
 appstore 409183694 Keynote (14.4)
 appstore 409203825 Numbers (14.4)
 appstore 409201541 Pages (14.4)
