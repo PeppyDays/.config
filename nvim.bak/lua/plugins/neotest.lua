@@ -1,7 +1,7 @@
 return {
   "nvim-neotest/neotest",
-  opts = {
-    icons = {
+  config = function(_, opts)
+    opts.icons = {
       running_animated = {
         "⠋",
         "⠙",
@@ -37,5 +37,9 @@ return {
       test = "T",
       notify = "N",
     }
-  }
+    opts.adapters = {
+      require("rustaceanvim.neotest"),
+    }
+    require("neotest").setup(opts)
+  end,
 }

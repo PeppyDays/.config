@@ -8,6 +8,25 @@ return {
           ".DS_Store",
         },
       },
+      window = {
+        mappings = {
+          ["<cr>"] = "open_with_window_picker",
+        },
+      },
+    },
+    buffer = {
+      window = {
+        mappings = {
+          ["<cr>"] = "open_with_window_picker",
+        },
+      },
+    },
+    window = {
+      window = {
+        mappings = {
+          ["<cr>"] = "open_with_window_picker",
+        },
+      },
     },
     default_component_configs = {
       indent = {

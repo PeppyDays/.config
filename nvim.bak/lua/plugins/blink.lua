@@ -4,6 +4,7 @@ return {
     "mikavilpas/blink-ripgrep.nvim",
     "xzbdmw/colorful-menu.nvim",
   },
+  version = "1.*",
   opts = {
     sources = {
       default = {
@@ -19,9 +20,9 @@ return {
         },
       },
     },
-    -- snippets = {
-    --   preset = "luasnip",
-    -- },
+    snippets = {
+      preset = "luasnip",
+    },
     keymap = {
       preset = "enter",
       ["<C-y>"] = { "select_and_accept" },

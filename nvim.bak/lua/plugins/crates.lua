@@ -1,6 +1,5 @@
 return {
   "saecki/crates.nvim",
-  event = "BufRead Cargo.toml",
   opts = {
     text = {
       searching = "Searching",
@@ -50,6 +49,12 @@ return {
         optional = "%s",
         dependency_version = "%s",
         loading = "",
+      },
+      completion = {
+        text = {
+          prerelease = " pre-release ",
+          yanked = " yanked ",
+        },
       },
     },
   },
