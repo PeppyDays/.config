@@ -1,9 +1,11 @@
-theme = catppuccin-frappe
+theme = Catppuccin Frappe
 
-font-family = "Operator Mono"
-font-style = "Book"
-font-style-bold = "Medium"
-font-size = 16
+font-size = 14
+font-family = "Operator Mono Book"
+font-family-italic = "Operator Mono Book Italic"
+font-family-bold = "Operator Mono Medium"
+font-family-bold-italic = "Operator Mono Medium Italic"
 
-title = " "
-macos-titlebar-style = hidden
+adjust-cell-height = 2
+
+window-decoration = none

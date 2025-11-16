@@ -57,3 +57,6 @@ yabai -m rule --add app="^KensingtonWorks2$" manage=off
 yabai -m rule --add app="^FortiClient$" manage=off
 yabai -m rule --add app="^Weixin$" manage=off
 
+# ignore tab as separate windows
+yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
+yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
