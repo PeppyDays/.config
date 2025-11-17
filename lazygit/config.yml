@@ -24,9 +24,8 @@ gui:
       - "#e5c890"
   authorColors:
     "*": "#babbf1"
-
 git:
-  paging:
-    # colorArg: never
-    # pager: ydiff -p cat -s --wrap --width={{columnWidth}}
-    externalDiffCommand: difft --color=always
+  pagers:
+    - # colorArg: never
+      # pager: ydiff -p cat -s --wrap --width={{columnWidth}}
+      externalDiffCommand: difft --color=always

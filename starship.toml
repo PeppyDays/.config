@@ -7,6 +7,11 @@ success_symbol = "[>](bold green)"
 error_symbol = "[x](bold red)"
 vimcmd_symbol = "[<](bold green)"
 
+[jobs]
+symbol = '+'
+number_threshold = 4
+symbol_threshold = 1
+
 [git_commit]
 tag_symbol = " tag "
 
@@ -208,8 +213,8 @@ symbol = "raku "
 [ruby]
 symbol = "rb "
 
-# [rust]
-# symbol = "rs "
+[rust]
+symbol = "rs "
 
 [scala]
 symbol = "scala "
