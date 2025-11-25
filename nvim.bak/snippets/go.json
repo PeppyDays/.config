@@ -1,7 +1,0 @@
-{
-  "test run": {
-    "prefix": "tr",
-    "body": "t.Run(\"${1:description}\", func(t *testing.T) {\n\t// Arrange\n\t$2\n\n\t// Act\n\t$3\n\n\t// Assert\n\t$4\n})",
-    "description": "Snippet for Test Run"
-  }
-}
