@@ -1,0 +1,32 @@
+-- ┌────────────────────┐
+-- │ MINI configuration │
+-- └────────────────────┘
+--
+-- This directory contains configuration of the MINI parts of the config.
+-- It contains only configs for the 'mini.nvim' plugin (installed in 'init.lua').
+--
+-- 'mini.nvim' is a library of modules. Each is enabled independently via
+-- `require('mini.xxx').setup()` convention. It creates all intended side effects:
+-- mappings, autocommands, highlight groups, etc. It also creates a global
+-- `MiniXxx` table that can be later used to access module's features.
+--
+-- Every module's `setup()` function accepts an optional `config` table to
+-- adjust its behavior. See the structure of this table at `:h MiniXxx.config`.
+--
+-- See `:h mini.nvim-general-principles` for more general principles.
+--
+-- Each module file has a brief explanation of what the module is for,
+-- its usage examples (uses Leader mappings from 'plugin/20_keymaps.lua'), and
+-- possible directions for more info.
+-- For more info about a module see its help page (`:h mini.xxx` for 'mini.xxx').
+--
+-- To minimize the time until first screen draw, modules are enabled in two steps:
+-- - Step one enables everything that is needed for first draw with `now()`.
+--   Sometimes is needed only if Neovim is started as `nvim -- path/to/file`.
+-- - Everything else is delayed until the first draw with `later()`.
+--
+-- Files are numbered to ensure correct loading order for dependencies:
+-- - 10-19: now() modules (load immediately)
+-- - 20+: later() modules (delayed loading)
+--   - mini.extra (20) loads before mini.ai (21) and mini.hipatterns (31)
+--   - mini.pairs (35) and mini.completion (27) load before mini.keymap (36)

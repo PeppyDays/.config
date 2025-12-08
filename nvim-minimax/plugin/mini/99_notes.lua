@@ -1,0 +1,4 @@
+-- Not mentioned here, but can be useful:
+-- - 'mini.doc' - needed only for plugin developers.
+-- - 'mini.fuzzy' - not really needed on a daily basis.
+-- - 'mini.test' - needed only for plugin developers.

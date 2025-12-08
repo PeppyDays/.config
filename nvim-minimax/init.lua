@@ -1,27 +1,22 @@
--- ┌────────────────────┐
--- │ Welcome to MiniMax │
--- └────────────────────┘
---
 -- This is a config designed to mostly use MINI. It provides out of the box
 -- a stable, polished, and feature rich Neovim experience. Its structure:
 --
--- ├ init.lua          Initial (this) file executed during startup
--- ├ plugin/           Files automatically sourced during startup
--- ├── 10_options.lua  Built-in Neovim behavior
--- ├── 20_keymaps.lua  Custom mappings
--- ├── 30_mini.lua     MINI configuration
--- ├── 40_plugins.lua  Plugins outside of MINI
--- ├ snippets/         User defined snippets (has demo file)
--- ├ after/            Files to override behavior added by plugins
--- ├── ftplugin/       Files for filetype behavior (has demo file)
--- ├── lsp/            Language server configurations (has demo file)
--- ├── snippets/       Higher priority snippet files (has demo file)
+-- ├── init.lua       Initial (this) file executed during startup
+-- ├── plugin/        Files automatically sourced during startup
+-- │   ├── core/      Core Neovim configuration (options, keymaps)
+-- │   ├── mini/      MINI configuration (one file per module)
+-- │   └── others/    Plugins outside of MINI (treesitter, lsp, etc.)
+-- ├── snippets/      User defined snippets (has demo file)
+-- └── after/         Files to override behavior added by plugins
+--     ├── ftplugin/  Files for filetype behavior (has demo file)
+--     ├── lsp/       Language server configurations (has demo file)
+--     └── snippets/  Higher priority snippet files (has demo file)
 --
 -- Config files are meant to be read, preferably inside a Neovim instance running
 -- this config and opened at its root. This will help you better understand your
 -- setup. Start with this file. Any order is possible, prefer the one listed above.
 -- Ways of navigating your config:
--- - `<Space>` + `e` + (one of) `iokmp` - edit 'init.lua' or 'plugin/' files.
+-- - `<Space>` + `e` + `i` - edit 'init.lua'; explore 'plugin/' with `<Space>ed`
 -- - Inside config directory: `<Space>ff` (picker) or `<Space>ed` (explorer)
 -- - Navigate existing buffers with `[b`, `]b`, or `<Space>fb`.
 --
@@ -62,7 +57,7 @@ end
 -- See also:
 -- - `:h MiniDeps-overview` - how to use it
 -- - `:h MiniDeps-commands` - all available commands
--- - 'plugin/30_mini.lua' - more details about 'mini.nvim' in general
+-- - 'plugin/mini/' - more details about 'mini.nvim' in general
 require("mini.deps").setup()
 
 -- Define config table to be able to pass data between scripts

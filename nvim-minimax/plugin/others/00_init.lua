@@ -1,0 +1,16 @@
+-- ┌─────────────────────────┐
+-- │ Plugins outside of MINI │
+-- └─────────────────────────┘
+--
+-- This directory contains installation and configuration of plugins outside of MINI.
+-- They significantly improve user experience in a way not yet possible with MINI.
+-- These are mostly plugins that provide programming language specific behavior.
+--
+-- Use this directory to install and configure other such plugins.
+--
+-- Files are numbered to ensure correct loading order:
+-- - 10_treesitter.lua - Tree-sitter for syntax parsing
+-- - 20_lsp.lua - Language Server Protocol configuration
+-- - 30_conform.lua - Code formatting
+-- - 40_snippets.lua - Snippet collections
+-- - 99_honorable.lua - Honorable mentions (mostly commented examples)
