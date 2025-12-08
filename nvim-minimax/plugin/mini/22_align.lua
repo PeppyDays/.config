@@ -9,8 +9,8 @@
 -- - `:h MiniAlign.gen_step` - list of support step customizations
 -- - `:h MiniAlign-algorithm` - how alignment is done on algorithmic level
 
-local later = MiniDeps.later
-
-later(function()
-	require("mini.align").setup()
-end)
+-- local later = MiniDeps.later
+--
+-- later(function()
+-- 	require("mini.align").setup()
+-- end)
