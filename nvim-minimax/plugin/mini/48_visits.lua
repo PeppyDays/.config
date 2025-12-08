@@ -14,5 +14,5 @@
 local later = MiniDeps.later
 
 later(function()
-	require("mini.visits").setup()
+  require("mini.visits").setup()
 end)

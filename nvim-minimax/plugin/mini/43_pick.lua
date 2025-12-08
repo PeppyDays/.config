@@ -31,5 +31,5 @@
 local later = MiniDeps.later
 
 later(function()
-	require("mini.pick").setup()
+  require("mini.pick").setup()
 end)

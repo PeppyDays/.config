@@ -18,7 +18,7 @@
 local later = MiniDeps.later
 
 later(function()
-	local miniclue = require("mini.clue")
+  local miniclue = require("mini.clue")
   -- stylua: ignore
   miniclue.setup({
     -- Define which clues to show. By default shows only clues for custom mappings

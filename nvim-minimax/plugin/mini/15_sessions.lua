@@ -7,5 +7,5 @@
 -- local now = MiniDeps.now
 --
 -- now(function()
--- 	require("mini.sessions").setup()
+--   require("mini.sessions").setup()
 -- end)

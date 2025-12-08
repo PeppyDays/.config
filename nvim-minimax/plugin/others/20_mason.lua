@@ -12,29 +12,29 @@ local add, later = MiniDeps.add, MiniDeps.later
 -- LSP servers to auto-install (must match names in 21_lsp.lua)
 -- Use Mason names (may differ from lspconfig names)
 local ensure_installed = {
-	"lua-language-server",
-	"marksman",
-	"json-lsp",
-	"yaml-language-server",
-	"helm-ls",
-	"basedpyright",
-	"ruff",
-	"gopls",
-	"rust-analyzer",
+  "lua-language-server",
+  "marksman",
+  "json-lsp",
+  "yaml-language-server",
+  "helm-ls",
+  "basedpyright",
+  "ruff",
+  "gopls",
+  "rust-analyzer",
 }
 
 later(function()
-	add("mason-org/mason.nvim")
-	require("mason").setup()
+  add("mason-org/mason.nvim")
+  require("mason").setup()
 
-	-- Auto-install missing servers
-	local registry = require("mason-registry")
-	registry.refresh(function()
-		for _, name in ipairs(ensure_installed) do
-			local pkg = registry.get_package(name)
-			if not pkg:is_installed() then
-				pkg:install()
-			end
-		end
-	end)
+  -- Auto-install missing servers
+  local registry = require("mason-registry")
+  registry.refresh(function()
+    for _, name in ipairs(ensure_installed) do
+      local pkg = registry.get_package(name)
+      if not pkg:is_installed() then
+        pkg:install()
+      end
+    end
+  end)
 end)

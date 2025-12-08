@@ -8,8 +8,8 @@
 local now, add = MiniDeps.now, MiniDeps.add
 
 now(function()
-	add("catppuccin/nvim")
-	vim.cmd("colorscheme catppuccin-frappe")
+  add("catppuccin/nvim")
+  vim.cmd("colorscheme catppuccin-frappe")
 end)
 
 -- You can try these other catppuccin flavors (uncomment with `gcc`):

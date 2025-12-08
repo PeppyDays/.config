@@ -12,5 +12,5 @@
 local later = MiniDeps.later
 
 later(function()
-	require("mini.jump2d").setup()
+  require("mini.jump2d").setup()
 end)

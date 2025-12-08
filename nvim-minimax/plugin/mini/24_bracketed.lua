@@ -12,5 +12,5 @@
 local later = MiniDeps.later
 
 later(function()
-	require("mini.bracketed").setup()
+  require("mini.bracketed").setup()
 end)

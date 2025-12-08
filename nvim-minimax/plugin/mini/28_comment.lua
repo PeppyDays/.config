@@ -11,5 +11,5 @@
 local later = MiniDeps.later
 
 later(function()
-	require("mini.comment").setup()
+  require("mini.comment").setup()
 end)

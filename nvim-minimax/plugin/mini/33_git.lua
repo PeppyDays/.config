@@ -14,5 +14,5 @@
 local later = MiniDeps.later
 
 later(function()
-	require("mini.git").setup()
+  require("mini.git").setup()
 end)

@@ -13,7 +13,7 @@
 local later = MiniDeps.later
 
 later(function()
-	require("mini.statusline").setup({
-		use_icons = false, -- Disable icons to avoid broken Nerd Font glyphs
-	})
+  require("mini.statusline").setup({
+    use_icons = false, -- Disable icons to avoid broken Nerd Font glyphs
+  })
 end)

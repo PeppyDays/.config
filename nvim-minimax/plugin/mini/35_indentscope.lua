@@ -12,5 +12,5 @@
 local later = MiniDeps.later
 
 later(function()
-	require("mini.indentscope").setup()
+  require("mini.indentscope").setup()
 end)

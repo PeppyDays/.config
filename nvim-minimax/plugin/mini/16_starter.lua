@@ -11,7 +11,7 @@
 local now = MiniDeps.now
 
 now(function()
-	require("mini.starter").setup({
-		header = "Hello, Arine?",
-	})
+  require("mini.starter").setup({
+    header = "Hello, Arine?",
+  })
 end)

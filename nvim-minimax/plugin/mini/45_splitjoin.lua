@@ -12,5 +12,5 @@
 local later = MiniDeps.later
 
 later(function()
-	require("mini.splitjoin").setup()
+  require("mini.splitjoin").setup()
 end)

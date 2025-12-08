@@ -7,5 +7,5 @@
 local later = MiniDeps.later
 
 later(function()
-	require("mini.jump").setup()
+  require("mini.jump").setup()
 end)

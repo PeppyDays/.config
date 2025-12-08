@@ -16,20 +16,20 @@ local add = MiniDeps.add
 local now_if_args = _G.Config.now_if_args
 
 now_if_args(function()
-	add("neovim/nvim-lspconfig")
+  add("neovim/nvim-lspconfig")
 
-	-- Use `:h vim.lsp.enable()` to automatically enable language server based on
-	-- the rules provided by 'nvim-lspconfig'.
-	-- Use `:h vim.lsp.config()` or 'after/lsp/' directory to configure servers.
-	vim.lsp.enable({
+  -- Use `:h vim.lsp.enable()` to automatically enable language server based on
+  -- the rules provided by 'nvim-lspconfig'.
+  -- Use `:h vim.lsp.config()` or 'after/lsp/' directory to configure servers.
+  vim.lsp.enable({
     "lua_ls",
     "marksman",
     "jsonls",
     "yamlls",
     "helm_ls",
-		"basedpyright",
+    "basedpyright",
     "ruff",
     "gopls",
     "rust_analyzer",
-	})
+  })
 end)
