@@ -13,6 +13,7 @@ abbr --add tf terraform
 
 # nvim
 abbr --add nv nvim
+abbr --add nvn NVIM_APPNAME=nvim-minimax nvim
 
 # git
 abbr --add lg lazygit
