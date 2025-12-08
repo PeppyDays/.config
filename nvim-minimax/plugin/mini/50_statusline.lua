@@ -10,9 +10,9 @@
 -- - `:h MiniStatusline-example-content` - example of default content. Use it to
 --   configure a custom statusline by setting `config.content.active` function.
 
-local now = MiniDeps.now
+local later = MiniDeps.later
 
-now(function()
+later(function()
 	require("mini.statusline").setup({
 		use_icons = false, -- Disable icons to avoid broken Nerd Font glyphs
 	})
