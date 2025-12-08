@@ -109,6 +109,7 @@ brew taplo
 brew tcl-tk
 brew tmux
 brew tree-sitter
+brew tree-sitter-cli
 brew unbound
 brew unibilium
 brew utf8proc
