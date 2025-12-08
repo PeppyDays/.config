@@ -22,6 +22,14 @@ now_if_args(function()
 	-- the rules provided by 'nvim-lspconfig'.
 	-- Use `:h vim.lsp.config()` or 'after/lsp/' directory to configure servers.
 	vim.lsp.enable({
-		-- "basedpyright",
+    "lua_ls",
+    "marksman",
+    "jsonls",
+    "yamlls",
+    "helm_ls",
+		"basedpyright",
+    "ruff",
+    "gopls",
+    "rust_analyzer",
 	})
 end)
