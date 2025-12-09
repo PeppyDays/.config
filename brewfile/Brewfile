@@ -107,6 +107,8 @@ brew starship
 brew superfile
 brew taplo
 brew tcl-tk
+brew terraform
+brew terraform-ls
 brew tmux
 brew tree-sitter
 brew tree-sitter-cli
