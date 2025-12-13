@@ -1,0 +1,7 @@
+{
+    "diagnostics.globals": [
+        "MiniDeps",
+        "MiniPick",
+        "MiniIcons"
+    ]
+}

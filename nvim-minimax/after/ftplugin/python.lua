@@ -6,6 +6,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   callback = function()
     -- Apply all fixes (ruff)
     vim.lsp.buf.code_action({
+      ---@diagnostic disable-next-line: missing-fields
       context = { options = { only = { "source.fixAll" } } },
       apply = true,
     })
