@@ -3,7 +3,22 @@ return {
   opts = {
     dashboard = {
       preset = {
-        header = "Hello Arine :)",
+        header = (function()
+          local hour = os.date("*t").hour
+          local greeting, emoji
+          if hour < 5 then
+            greeting, emoji = "Good night", "🌙"
+          elseif hour < 12 then
+            greeting, emoji = "Good morning", "☀️"
+          elseif hour < 17 then
+            greeting, emoji = "Good afternoon", "🌤️"
+          elseif hour < 21 then
+            greeting, emoji = "Good evening", "🌅"
+          else
+            greeting, emoji = "Good night", "🌙"
+          end
+          return greeting .. ", Arine " .. emoji
+        end)(),
       },
       formats = {},
       sections = {
