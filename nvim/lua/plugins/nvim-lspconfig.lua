@@ -23,29 +23,6 @@ return {
               },
             },
           },
-          capabilities = {
-            textDocument = {
-              codeAction = {
-                dynamicRegistration = true,
-                isPreferredSupport = true,
-                codeActionLiteralSupport = {
-                  codeActionKind = {
-                    valueSet = {
-                      "",
-                      "quickfix",
-                      "refactor",
-                      "refactor.extract",
-                      "refactor.inline",
-                      "refactor.rewrite",
-                      "source",
-                      "source.organizeImports",
-                      "source.fixAll",
-                    },
-                  },
-                },
-              },
-            },
-          },
         },
         gopls = {
           settings = {
