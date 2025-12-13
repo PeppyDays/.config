@@ -13,9 +13,15 @@ vim.keymap.del("n", "<leader>fn")
 vim.keymap.del("n", "<leader>wm")
 vim.keymap.del("n", "<leader>uZ")
 vim.keymap.del("n", "<leader>/")
+vim.keymap.del("n", "<leader>e")
+vim.keymap.del("n", "<leader>E")
+vim.keymap.del("n", "<leader>'")
+vim.keymap.del("n", "<leader>,")
 
 -- grep
-vim.keymap.set("n", "<leader>f/", function() Snacks.picker.grep_buffers() end, { desc = "Grep Open Buffers" })
+vim.keymap.set("n", "<leader>f/", function()
+  Snacks.picker.grep()
+end, { desc = "Grep Open Buffers" })
 
 -- move like helix
 vim.keymap.set("n", "gh", "0", { desc = "Go to line start" })
