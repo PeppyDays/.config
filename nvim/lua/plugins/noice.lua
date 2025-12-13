@@ -12,6 +12,13 @@ return {
         input = { icon = "input" },
       },
     },
+    messages = {
+      view = "mini",
+      view_error = "mini",
+      view_warn = "mini",
+      view_history = "mini",
+      view_search = "mini",
+    },
     format = {
       level = {
         icons = {
@@ -22,14 +29,5 @@ return {
       },
     },
     popupmenu = { kind_icons = false },
-    inc_rename = {
-      cmdline = {
-        format = {
-          IncRename = {
-            icon = "rename",
-          },
-        },
-      },
-    },
   },
 }
