@@ -4,6 +4,7 @@ return {
     preset = "classic",
     spec = {
       {
+        { "<leader>h", group = "bookmark" },
         { "gh", desc = "Go to line start" },
         { "gl", desc = "Go to line end" },
         { "gs", desc = "Go to first non-blank in line" },
