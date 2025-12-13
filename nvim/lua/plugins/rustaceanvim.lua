@@ -12,6 +12,7 @@ return {
             preferPrelude = true,
             granularity = {
               group = "item",
+              enforce = true,
             },
             prefix = "crate",
           },
