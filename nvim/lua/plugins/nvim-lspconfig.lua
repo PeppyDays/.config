@@ -17,7 +17,7 @@ return {
               analysis = {
                 autoImportCompletions = true,
                 autoSearchPaths = true,
-                typeCheckingMode = "standard",
+                typeCheckingMode = "recommended",
                 useLibraryCodeForTypes = true,
                 diagnosticMode = "openFilesOnly",
               },
