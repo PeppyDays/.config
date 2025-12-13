@@ -34,3 +34,17 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
   desc = "Disable single quote Rust",
 })
+
+-- Python: Format on save using ruff LSP (fixAll + format)
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.py",
+  group = vim.api.nvim_create_augroup("PythonFormat", { clear = true }),
+  callback = function()
+    vim.lsp.buf.code_action({
+      context = { only = { "source.fixAll" } },
+      apply = true,
+    })
+    vim.lsp.buf.format({ name = "ruff" })
+  end,
+  desc = "Format Python with ruff",
+})
