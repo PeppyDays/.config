@@ -1,7 +1,15 @@
 return {
   "folke/snacks.nvim",
   opts = {
-    dashboard = { enabled = false },
+    dashboard = {
+      preset = {
+        header = "Hello Arine :)",
+      },
+      formats = {},
+      sections = {
+        { section = "header" },
+      },
+    },
     explorer = { enabled = false },
     scroll = {
       animate = {
