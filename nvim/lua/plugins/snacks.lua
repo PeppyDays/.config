@@ -69,5 +69,12 @@ return {
       end,
       desc = "Buffers",
     },
+    {
+      "<leader>fc",
+      function()
+        Snacks.picker.git_status()
+      end,
+      desc = "Find Changed Files",
+    },
   },
 }
