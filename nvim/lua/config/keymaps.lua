@@ -20,8 +20,7 @@ vim.keymap.set("n", "gs", "^", { desc = "Go to first non-blank in line" })
 vim.keymap.set("n", "ge", "G", { desc = "Go to the end of the file" })
 
 -- exit with jk
--- disabled because of better-escape
--- vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
+vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
 -- new buffer
 vim.keymap.set("n", "<leader>bn", "<cmd>enew<cr>", { desc = "New buffer" })
