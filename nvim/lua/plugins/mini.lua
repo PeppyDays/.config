@@ -19,15 +19,15 @@ return {
     "nvim-mini/mini.move",
     opts = {
       mappings = {
-        left = "<M-S-h>",
-        right = "<M-S-l>",
-        down = "<M-S-j>",
-        up = "<M-S-k>",
+        left = "<M-h>",
+        right = "<M-l>",
+        down = "<M-j>",
+        up = "<M-k>",
 
-        line_left = "<M-S-h>",
-        line_right = "<M-S-l>",
-        line_down = "<M-S-j>",
-        line_up = "<M-S-k>",
+        line_left = "<M-h>",
+        line_right = "<M-l>",
+        line_down = "<M-j>",
+        line_up = "<M-k>",
       },
     },
   },
