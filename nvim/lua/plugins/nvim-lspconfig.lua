@@ -17,9 +17,10 @@ return {
               analysis = {
                 autoImportCompletions = true,
                 autoSearchPaths = true,
-                typeCheckingMode = "recommended",
+                typeCheckingMode = "standard",
                 useLibraryCodeForTypes = true,
-                diagnosticMode = "openFilesOnly",
+                -- diagnosticMode = "openFilesOnly",
+                diagnosticMode = "workspace",
               },
             },
           },
