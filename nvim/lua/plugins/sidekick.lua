@@ -14,10 +14,6 @@ return {
       },
     },
     cli = {
-      mux = {
-        backend = "zellij",
-        enabled = true,
-      },
       tools = {
         claude = {
           cmd = { "claude", "--dangerously-skip-permissions" },
