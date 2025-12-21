@@ -11,26 +11,8 @@ return {
         },
       },
       servers = {
-        basedpyright = {
-          settings = {
-            basedpyright = {
-              analysis = {
-                autoImportCompletions = true,
-                autoSearchPaths = true,
-                typeCheckingMode = "standard",
-                useLibraryCodeForTypes = true,
-                -- diagnosticMode = "openFilesOnly",
-                diagnosticMode = "workspace",
-              },
-            },
-          },
-        },
-        gopls = {
-          settings = {
-            gopls = {
-              staticcheck = false,
-            },
-          },
+        ruff = {
+          enabled = false,
         },
       },
       diagnostics = {
