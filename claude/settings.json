@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "defaultMode": "default"
+  },
+  "model": "opus",
+  "statusLine": {
+    "type": "command",
+    "command": "~/.config/claude/statusline.sh",
+    "padding": 0
+  },
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "serena@claude-plugins-official": true
+  },
+  "alwaysThinkingEnabled": true
+}
