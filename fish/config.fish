@@ -14,6 +14,9 @@ set -gx CODEX_HOME $HOME/.config/codex
 # llvm bin directory
 fish_add_path /opt/homebrew/opt/llvm/bin
 
+# uv
+fish_add_path $HOME/.local/bin
+
 # greeting message
 set fish_greeting
 
