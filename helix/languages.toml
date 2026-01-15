@@ -29,8 +29,8 @@ name = "python"
 language-servers = ["basedpyright", "ruff"]
 auto-format = true
 formatter = { command = "bash", args = [
-    "-c",
-    "ruff check --fix - | ruff format -",
+  "-c",
+  "ruff check --fix - | ruff format -",
 ] }
 
 [language-server.basedpyright]
@@ -45,7 +45,7 @@ inlayHint.enable = true
 authSearchPaths = true
 autoImportCompletions = true
 diagnosticMode = "workspace"
-typeCheckingMode = "recommended"
+typeCheckingMode = "strict"
 useLibraryCodeForType = true
 reportOptionalSubscript = false
 reportOptionalMemberAccess = false
