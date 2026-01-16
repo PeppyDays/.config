@@ -11,9 +11,9 @@ return {
         },
       },
       servers = {
-        ruff = {
-          enabled = false,
-        },
+        pyright = { enabled = false },
+        basedpyright = { enabled = false },
+        ty = { enabled = true },
       },
       diagnostics = {
         signs = {
