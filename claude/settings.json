@@ -2,7 +2,6 @@
   "permissions": {
     "defaultMode": "default"
   },
-  "model": "opus",
   "statusLine": {
     "type": "command",
     "command": "~/.config/claude/statusline.sh",
