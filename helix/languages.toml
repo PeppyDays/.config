@@ -26,29 +26,17 @@ formatter = { command = "fish_indent" }
 
 [[language]]
 name = "python"
-language-servers = ["basedpyright", "ruff"]
+language-servers = ["ty", "ruff"]
 auto-format = true
 formatter = { command = "bash", args = [
   "-c",
   "ruff check --fix - | ruff format -",
 ] }
 
-[language-server.basedpyright]
-command = "basedpyright-langserver"
-args = ["--stdio"]
 
-[language-server.basedpyright.config.basedpyright.analysis]
-venvPath = "."
-venv = ".venv"
-lint = true
-inlayHint.enable = true
-authSearchPaths = true
-autoImportCompletions = true
-diagnosticMode = "workspace"
-typeCheckingMode = "strict"
-useLibraryCodeForType = true
-reportOptionalSubscript = false
-reportOptionalMemberAccess = false
+[language-server.ty]
+command = "ty"
+args = ["server"]
 
 [language-server.ruff]
 command = "ruff"
