@@ -34,7 +34,7 @@ abbr --add zjr zellij run
 abbr --add zjrf zellij run --floating
 
 # claude code
-abbr --add cl claude --dangerously-skip-permissions
+abbr --add cl ~/.local/bin/claude --dangerously-skip-permissions
 
 # gemini cli
 abbr --add gm gemini
