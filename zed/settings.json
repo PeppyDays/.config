@@ -7,69 +7,67 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "wrap_guides": [120],
+  "buffer_font_family": ".ZedMono",
+  "restore_on_startup": "launchpad",
+  "when_closing_with_no_tabs": "platform_default",
   "agent": {
     "default_model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-latest"
-    }
+      "provider": "openai",
+      "model": "gpt-5.2"
+    },
+    "play_sound_when_agent_done": true,
+    "always_allow_tool_actions": true,
+    "model_parameters": [],
   },
-  // "base_keymap": "JetBrains",
+  "wrap_guides": [120],
   "theme": "Catppuccin Frappé",
   "inlay_hints": {
     "enabled": true,
-    "type_hints": true,
-    "parameter_hints": true,
-    "chaining_hints": true,
-    "visibility_hints": true
   },
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
+  "helix_mode": true,
   "vim_mode": true,
   "vim": {
-    "default_mode": "helix_normal",
-    "use_multiline_find": true,
-    "use_smartcase_find": true
+    "default_mode": "normal",
+    "use_smartcase_find": true,
   },
   "scrollbar": {
-    "show": "never"
+    "show": "never",
   },
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   "ui_font_size": 16,
   "buffer_font_size": 16,
   "terminal": {
-    "copy_on_select": true
+    "copy_on_select": true,
   },
   "autosave": "on_focus_change",
   "lsp": {
     "rust-analyzer": {
       "initialization_options": {
         "check": {
-          "command": "clippy"
+          "command": "clippy",
         },
         "checkOnSave": false,
         "imports": {
           "preferPrelude": true,
           "granularity": {
-            "group": "item"
+            "group": "item",
           },
-          "prefix": "crate"
-        }
+          "prefix": "crate",
+        },
       },
-      "rustfmt": {
-        "extraArgs": ["+nightly"]
-      }
     },
     "basedpyright": {
       "settings": {
-        "basedpyright.analysis.typeCheckingMode": "standard",
+        "basedpyright.analysis.typeCheckingMode": "strict",
         "basedpyright.analysis.autoImportCompletions": true,
         "basedpyright.analysis.autoSearchPaths": true,
         "basedpyright.analysis.diagnosticMode": "workspace",
-        "basedpyright.analysis.useLibraryCodeForTypes": true
-      }
-    }
-  }
+        "basedpyright.analysis.useLibraryCodeForTypes": true,
+      },
+    },
+  },
 }
