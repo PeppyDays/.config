@@ -70,6 +70,18 @@ rst() { if [ "$use_color" -eq 1 ]; then printf '\033[0m'; fi; }
 git_branch=""
 if git rev-parse --git-dir >/dev/null 2>&1; then
   git_branch=$(git branch --show-current 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
+  # Shorten current_dir to repo-root-name/relative-path
+  git_toplevel=$(git rev-parse --show-toplevel 2>/dev/null)
+  if [ -n "$git_toplevel" ]; then
+    repo_name=$(basename "$git_toplevel")
+    actual_dir=$(echo "$current_dir" | sed "s|^~|$HOME|")
+    if [ "$actual_dir" = "$git_toplevel" ]; then
+      current_dir="$repo_name"
+    else
+      rel_path="${actual_dir#$git_toplevel/}"
+      current_dir="${repo_name}/${rel_path}"
+    fi
+  fi
 fi
 
 # ---- context window calculation ----
